@@ -6,39 +6,34 @@ import { useState, useRef } from "react";
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Extraction");
   const [toast, setToast] = useState<string | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRefs = Array.from({ length: 8 }, () => useRef<HTMLVideoElement>(null));
+  const peerConnections = useRef<(RTCPeerConnection | null)[]>(Array(8).fill(null));
 
-  async function connectToRover() {
-    setToast("Connecting to rover camera...");
+  async function connectToRover(cameraId: number) {
+    setToast(`Connecting to rover camera ${cameraId + 1}...`);
     const pc = new window.RTCPeerConnection();
-    // Add a video transceiver so the SDP includes a video track
     pc.addTransceiver("video", { direction: "recvonly" });
 
     let connected = false;
     pc.ontrack = (event) => {
-      if (videoRef.current) {
-        videoRef.current.srcObject = event.streams[0];
+      if (videoRefs[cameraId].current) {
+        videoRefs[cameraId].current.srcObject = event.streams[0];
         if (!connected) {
-          setToast("Connected via WebRTC");
+          setToast(`Connected to Camera ${cameraId + 1} via WebRTC`);
           connected = true;
           setTimeout(() => setToast(null), 3000);
         }
       }
     };
 
-    // ICE candidate handling
-    const iceCandidates = [];
     pc.onicecandidate = (event) => {
-      if (event.candidate) {
-        iceCandidates.push(event.candidate);
-      }
+      // ICE candidate handling (optional for simple setup)
     };
 
     try {
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
 
-      // Hardcoded rover IP address
       const roverHost = "192.168.50.1";
       const response = await fetch(`http://${roverHost}:3001/offer`, {
         method: "POST",
@@ -46,12 +41,14 @@ export default function Home() {
         body: JSON.stringify({
           sdp: offer.sdp,
           type: offer.type,
+          camera_id: cameraId,
         }),
       });
       const answer = await response.json();
       await pc.setRemoteDescription(new window.RTCSessionDescription(answer));
+      peerConnections.current[cameraId] = pc;
     } catch (err) {
-      setToast("Connection failed");
+      setToast(`Connection to Camera ${cameraId + 1} failed`);
       setTimeout(() => setToast(null), 3000);
     }
   }
@@ -114,12 +111,16 @@ export default function Home() {
             {/* Tab content below */}
             {activeTab === "Extraction" ? (
               <>
-                <button onClick={connectToRover} style={{ marginBottom: 16 }}>Connect to Rover Camera</button>
-                <video ref={videoRef} autoPlay playsInline style={{ width: 640, height: 480, background: "#000", marginBottom: 16 }} />
                 <div className="rover-cameras-label">Cameras</div>
                 <div className="rover-cameras-grid">
                   {[...Array(8)].map((_, i) => (
-                    <div key={i} className="rover-camera">Camera{i+1}</div>
+                    <div key={i} className="rover-camera" style={{ position: "relative" }}>
+                      <button onClick={() => connectToRover(i)} style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }}>
+                        Connect
+                      </button>
+                      <video ref={videoRefs[i]} autoPlay playsInline style={{ width: "100%", height: "100%", background: "#000" }} />
+                      <div style={{ position: "absolute", top: 8, left: 8, color: "#fff", fontWeight: "bold" }}>Camera{i+1}</div>
+                    </div>
                   ))}
                 </div>
                 <div className="rover-row">
