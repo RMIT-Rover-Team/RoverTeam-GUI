@@ -32,8 +32,7 @@ class RoverCameraTrack(MediaStreamTrack):
         ret, frame = self.cap.read()
         if not ret:
             logging.error("Failed to grab frame from camera")
-            await asyncio.sleep(0.1)
-            return None
+            raise Exception("Camera frame not available")
         new_frame = VideoFrame.from_ndarray(frame, format="bgr24")
         new_frame.pts = int(time.time() * 1000000)
         new_frame.time_base = Fraction(1, 1000000)
@@ -101,6 +100,30 @@ async def on_shutdown(app):
     await asyncio.gather(*coros)
     pcs.clear()
 
+import glob
+def get_available_cameras():
+    available = []
+    # Find all /dev/video* devices
+    video_devices = glob.glob('/dev/video*')
+    for device in video_devices:
+        # Extract the index from the device name
+        try:
+            index = int(device.replace('/dev/video', ''))
+        except ValueError:
+            continue
+        cap = cv2.VideoCapture(index)
+        if cap.isOpened():
+            available.append(index)
+            cap.release()
+    return available
+
+async def list_cameras(request):
+    cameras = get_available_cameras()
+    return web.json_response({"cameras": cameras})
+
+async def root(request):
+    return web.Response(text="Rover WebRTC server is running.")
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
@@ -118,11 +141,17 @@ if __name__ == "__main__":
     app.on_shutdown.append(on_shutdown)
     app.router.add_post("/offer", offer)
     app.router.add_route("OPTIONS", "/offer", offer)
-
-    # Add a root endpoint for status check
-    async def root(request):
-        return web.Response(text="Rover WebRTC server is running.")
     app.router.add_get("/", root)
+    app.router.add_get("/cameras", list_cameras)  # <-- Add this line here
 
     logging.info(f"Starting rover server at http://{HOST}:{PORT}")
     web.run_app(app, host=HOST, port=PORT)
+
+    import cv2
+    cap = cv2.VideoCapture(CAMERA_ID)
+    ret, frame = cap.read()
+    print(ret, frame is not None)
+    if ret:
+        cv2.imshow('Test', frame)
+        cv2.waitKey(0)
+    cap.release()
