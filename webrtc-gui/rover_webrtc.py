@@ -20,6 +20,7 @@ class RoverCameraTrack(MediaStreamTrack):
 
     def __init__(self, camera_id=0):
         super().__init__()
+        self.camera_id = camera_id
         self.cap = cv2.VideoCapture(camera_id)
         if not self.cap.isOpened():
             raise Exception(f"Could not open video source {camera_id}")
@@ -103,23 +104,34 @@ async def on_shutdown(app):
 import glob
 def get_available_cameras():
     available = []
-    # Find all /dev/video* devices
-    video_devices = glob.glob('/dev/video*')
-    for device in video_devices:
-        # Extract the index from the device name
-        try:
-            index = int(device.replace('/dev/video', ''))
-        except ValueError:
-            continue
-        cap = cv2.VideoCapture(index)
+    # Check indices 0-4 for USB cameras
+    for i in range(5):
+        cap = cv2.VideoCapture(i)
         if cap.isOpened():
-            available.append(index)
-            cap.release()
+            ret, frame = cap.read()
+            if ret:
+                available.append(i)
+        cap.release()
     return available
 
 async def list_cameras(request):
-    cameras = get_available_cameras()
-    return web.json_response({"cameras": cameras})
+    available = get_available_cameras()
+    # Determine which cameras are currently connected via WebRTC
+    connected_ids = set()
+    for pc in pcs:
+        for transceiver in pc.getTransceivers():
+            if transceiver.kind == "video" and transceiver.receiver.track:
+                track = transceiver.receiver.track
+                if hasattr(track, "camera_id"):
+                    connected_ids.add(track.camera_id)
+    camera_list = []
+    for idx in available:
+        camera_list.append({
+            'id': idx,
+            'label': f'USB Camera {idx}',
+            'connected': idx in connected_ids
+        })
+    return web.json_response({'cameras': camera_list})
 
 async def root(request):
     return web.Response(text="Rover WebRTC server is running.")

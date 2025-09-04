@@ -1,25 +1,20 @@
+
 import Head from "next/head";
 import { useState, useRef, useEffect } from "react";
-
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Extraction");
   const [toast, setToast] = useState<string | null>(null);
-  // Only show Camera2, Camera3, Camera4 boxes for sources 22, 21, 15, 14
-  const cameraSources = [22, 21, 15, 14, 1, 0];
+  // USB camera refs (support up to 2)
   const videoRef0 = useRef<HTMLVideoElement>(null);
   const videoRef1 = useRef<HTMLVideoElement>(null);
-  const videoRef2 = useRef<HTMLVideoElement>(null);
-  const videoRef3 = useRef<HTMLVideoElement>(null);
-  const videoRef4 = useRef<HTMLVideoElement>(null);
-  const videoRef5 = useRef<HTMLVideoElement>(null);
-  const videoRefs = [videoRef0, videoRef1, videoRef2, videoRef3, videoRef4, videoRef5];
-  const peerConnections = useRef<(RTCPeerConnection | null)[]>(Array(cameraSources.length).fill(null));
-  const [connectedCameras, setConnectedCameras] = useState<boolean[]>(Array(cameraSources.length).fill(false));
-  const [availableCameras, setAvailableCameras] = useState<number[]>([]);
+  const videoRefs = [videoRef0, videoRef1];
+  const [availableCameras, setAvailableCameras] = useState<{id: number, label: string}[]>([]);
+  const peerConnections = useRef<(RTCPeerConnection | null)[]>([null, null]);
+  const [connectedCameras, setConnectedCameras] = useState<boolean[]>([false, false]);
 
   useEffect(() => {
-    fetch("http://192.158.50.1:3001/cameras")
+    fetch("http://192.168.50.1:3001/cameras")
       .then(res => res.json())
       .then(data => {
         if (data.cameras) setAvailableCameras(data.cameras);
@@ -28,10 +23,11 @@ export default function Home() {
   }, []);
 
   async function connectToRover(idx: number) {
-    const cameraId = cameraSources[idx];
-    setToast(`Connecting to rover camera source ${cameraId}...`);
+    const cameraId = availableCameras[idx]?.id;
+    if (cameraId === undefined) return;
+    setToast(`Connecting to rover USB camera ${cameraId}...`);
     if (peerConnections.current[idx]) {
-      setToast(`Camera source ${cameraId} already connected`);
+      setToast(`Camera ${cameraId} already connected`);
       setTimeout(() => setToast(null), 2000);
       return;
     }
@@ -43,7 +39,7 @@ export default function Home() {
       if (videoRefs[idx].current) {
         videoRefs[idx].current.srcObject = event.streams[0];
         if (!connected) {
-          setToast(`Connected to Camera source ${cameraId} via WebRTC`);
+          setToast(`Connected to USB Camera ${cameraId} via WebRTC`);
           connected = true;
           setConnectedCameras(prev => {
             const updated = [...prev];
@@ -77,7 +73,7 @@ export default function Home() {
       await pc.setRemoteDescription(new window.RTCSessionDescription(answer));
       peerConnections.current[idx] = pc;
     } catch (err) {
-      setToast(`Connection to Camera source ${cameraId} failed`);
+      setToast(`Connection to USB Camera ${cameraId} failed`);
       setTimeout(() => setToast(null), 3000);
     }
   }
@@ -140,19 +136,25 @@ export default function Home() {
             {/* Tab content below */}
             {/* Always render camera grid, but hide when not on Extraction tab */}
             <div style={{ display: activeTab === "Extraction" ? "block" : "none" }}>
-              <div className="rover-cameras-label">Cameras</div>
-              <div className="rover-cameras-grid">
-                {cameraSources.map((src, i) => (
-                  <div key={src} className="rover-camera" style={{ position: "relative" }}>
-                    <button onClick={() => connectToRover(i)} style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }} disabled={connectedCameras[i]}>
-                      {connectedCameras[i] ? "Connected" : "Connect"}
-                    </button>
-                    <video ref={videoRefs[i]} autoPlay playsInline style={{ width: "100%", height: "100%", background: "#000" }} />
-                    <div style={{ position: "absolute", top: 8, left: 8, color: "#fff", fontWeight: "bold" }}>Camera{i+2}</div>
-                    <div style={{ position: "absolute", bottom: 8, left: 8, color: "#fff", fontSize: 12 }}>Source: {src}</div>
-                  </div>
-                ))}
-              </div>
+              <div className="rover-cameras-label">USB Cameras</div>
+              {availableCameras.length === 0 ? (
+                <div style={{ color: '#fff', background: '#c00', padding: '16px', borderRadius: '8px', textAlign: 'center', margin: '24px 0' }}>
+                  No USB cameras detected. Please check your connections and refresh.
+                </div>
+              ) : (
+                <div className="rover-cameras-grid">
+                  {availableCameras.map((cam, i) => (
+                    <div key={cam.id} className="rover-camera" style={{ position: "relative" }}>
+                      <button onClick={() => connectToRover(i)} style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }} disabled={connectedCameras[i]}>
+                        {connectedCameras[i] ? "Connected" : "Connect"}
+                      </button>
+                      <video ref={videoRefs[i]} autoPlay playsInline style={{ width: "100%", height: "100%", background: "#000" }} />
+                      <div style={{ position: "absolute", top: 8, left: 8, color: "#fff", fontWeight: "bold" }}>{cam.label}</div>
+                      <div style={{ position: "absolute", bottom: 8, left: 8, color: "#fff", fontSize: 12 }}>Index: {cam.id}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="rover-row">
                 <div className="rover-section">
                   <div className="rover-section-title">Auger</div>
