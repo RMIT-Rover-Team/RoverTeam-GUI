@@ -8,9 +8,15 @@ export default function Home() {
   const [toast, setToast] = useState<string | null>(null);
   const videoRefs = Array.from({ length: 8 }, () => useRef<HTMLVideoElement>(null));
   const peerConnections = useRef<(RTCPeerConnection | null)[]>(Array(8).fill(null));
+  const [connectedCameras, setConnectedCameras] = useState<boolean[]>(Array(8).fill(false));
 
   async function connectToRover(cameraId: number) {
     setToast(`Connecting to rover camera ${cameraId + 1}...`);
+    if (peerConnections.current[cameraId]) {
+      setToast(`Camera ${cameraId + 1} already connected`);
+      setTimeout(() => setToast(null), 2000);
+      return;
+    }
     const pc = new window.RTCPeerConnection();
     pc.addTransceiver("video", { direction: "recvonly" });
 
@@ -21,6 +27,11 @@ export default function Home() {
         if (!connected) {
           setToast(`Connected to Camera ${cameraId + 1} via WebRTC`);
           connected = true;
+          setConnectedCameras(prev => {
+            const updated = [...prev];
+            updated[cameraId] = true;
+            return updated;
+          });
           setTimeout(() => setToast(null), 3000);
         }
       }
@@ -115,8 +126,8 @@ export default function Home() {
                 <div className="rover-cameras-grid">
                   {[...Array(8)].map((_, i) => (
                     <div key={i} className="rover-camera" style={{ position: "relative" }}>
-                      <button onClick={() => connectToRover(i)} style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }}>
-                        Connect
+                      <button onClick={() => connectToRover(i)} style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }} disabled={connectedCameras[i]}>
+                        {connectedCameras[i] ? "Connected" : "Connect"}
                       </button>
                       <video ref={videoRefs[i]} autoPlay playsInline style={{ width: "100%", height: "100%", background: "#000" }} />
                       <div style={{ position: "absolute", top: 8, left: 8, color: "#fff", fontWeight: "bold" }}>Camera{i+1}</div>

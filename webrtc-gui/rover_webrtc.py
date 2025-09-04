@@ -18,11 +18,11 @@ PORT = 3001
 class RoverCameraTrack(MediaStreamTrack):
     kind = "video"
 
-    def __init__(self):
+    def __init__(self, camera_id=0):
         super().__init__()
-        self.cap = cv2.VideoCapture(CAMERA_ID)
+        self.cap = cv2.VideoCapture(camera_id)
         if not self.cap.isOpened():
-            raise Exception(f"Could not open video source {CAMERA_ID}")
+            raise Exception(f"Could not open video source {camera_id}")
 
         self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -56,6 +56,7 @@ async def offer(request):
 
     params = await request.json()
     logging.info(f"Received offer: {json.dumps(params)[:500]}")
+    camera_id = params.get("camera_id", 0)
     try:
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         pc = RTCPeerConnection()
@@ -69,7 +70,7 @@ async def offer(request):
                 pcs.discard(pc)
 
         try:
-            camera_track = RoverCameraTrack()
+            camera_track = RoverCameraTrack(camera_id=camera_id)
             pc.addTrack(camera_track)
         except Exception as cam_err:
             logging.error(f"Camera error: {cam_err}")
