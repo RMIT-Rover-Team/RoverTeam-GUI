@@ -1,8 +1,28 @@
+#
+---
+
+## whoa! this is so cool! how does this work?
+
+-- NOTE: THIS SECTION IS TECHNICAL AND WILL THROW BIG WORDS AT YOU. keep up ;) --
+
+This uses a real time streaming protocol called **WebRTC**, owned by Google. It's a new protocol used by popular voice applications like Google Meet, Discord, WhatsApp, etc. due to minimal latency and support for live streaming with video. This is what we use to communicate to the rover's cameras via radio.
+
+It uses the **ICE (Interactive Connectivity Establishment)** framework which coordinates **STUN** and **TURN** (Session Traversal Utilities for NAT, Traversal Using Relays around NAT - NAT - Network Address Translation) which helps the discovery of public IP addresses to enable direct communication (also known as direct peer-to-peer connection).
+
+The file responsible for all this magic is `rover_webrtc.py`, a Python script which uses the above methods to stream the camera connections via WebRTC. This script is located on the Raspberry Pi and acts as a "Host", and the file `index.tsx` (made using react - typescript) views the feed live.
+
+Your computer, which is connected to the rover via radio, acts as a "client" and translates the NAT communication, which allows for real time video streaming to the cameras on the rover.
+
+For my visual learners, see the diagram attached. **A** would be the client (e.g. someone's laptop) and **B** would be the Raspberry Pi.
+
+![WebRTC Architecture Diagram](webrtc-gui/public/ivrpowers-turn-stun-screen.005.jpeg)
 # Rover GUI - USB Cameras Example
 
 ![Rover GUI with USB Cameras](webrtc-gui/public/rover_gui_usb_cameras.png)
 
 This screenshot shows the Rover GUI displaying two connected USB cameras, with live video feeds and connection status indicators.
+
+in this case, Camera 0 is the camera below the right wheel (for payloads), and Camera 2 is the 360 Gimbal Camera. 
 
 
 # How to clone the repository
@@ -103,15 +123,10 @@ This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-appl
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js and WebRTC, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- [WebRTC Documentation](https://webrtc.org/getting-started/overview) - learn about real-time streaming and peer-to-peer connections.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
