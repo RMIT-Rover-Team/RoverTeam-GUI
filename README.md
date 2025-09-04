@@ -5,9 +5,21 @@
 This screenshot shows the Rover GUI displaying two connected USB cameras, with live video feeds and connection status indicators.
 
 
+# How to clone the repository
+
+Head to the repository: https://github.com/Ridge19/RoverTeam-GUI
+
+**Cloning via SSH (most common and easiest):**
+1. Click on 'Code' then copy the SSH URL: `git@github.com:Ridge19/RoverTeam-GUI.git`
+2. In your terminal, run:
+
+```bash
+git clone git@github.com:Ridge19/RoverTeam-GUI.git
+```
+
 # How to run GUI
 
-- On the laptop (client), open your editor of choice (e.g. VS Code) and clone the repository.
+- On the laptop (client), open your editor of choice (e.g. VS Code) after cloning the repository (see above).
 - After cloning, install dependencies using:
 
 ```bash
