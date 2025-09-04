@@ -1,6 +1,6 @@
 # Rover GUI - USB Cameras Example
 
-![Rover GUI with USB Cameras](public/rover_gui_usb_cameras.png)
+![Rover GUI with USB Cameras](webrtc-gui/public/rover_gui_usb_cameras.png)
 
 This screenshot shows the Rover GUI displaying two connected USB cameras, with live video feeds and connection status indicators.
 
@@ -9,43 +9,49 @@ This screenshot shows the Rover GUI displaying two connected USB cameras, with l
 
 - On the laptop (client), open your editor of choice (e.g. VS Code) and clone the repository.
 - After cloning, install dependencies using:
-	```bash
-	npm install
-	```
-	(Make sure you are in the `webrtc-gui` folder)
-- To run the GUI application, use:
-	```bash
-	npm run dev
-	```
-	It will be accessible via [localhost:3000](http://localhost:3000)
-	You should see:
-	```
-	> webrtc-gui@0.1.0 dev
-	> next dev --turbopack
 
-	▲ Next.js 15.4.6 (Turbopack)
-	- Local:        http://localhost:3000
-	- Network:      http://172.24.80.1:3000
-	```
+```bash
+npm install
+```
+(Make sure you are in the `webrtc-gui` folder)
+- To run the GUI application, use:
+
+```bash
+npm run dev
+```
+It will be accessible via [localhost:3000](http://localhost:3000)
+You should see:
+
+```text
+> webrtc-gui@0.1.0 dev
+> next dev --turbopack
+
+▲ Next.js 15.4.6 (Turbopack)
+- Local:        http://localhost:3000
+- Network:      http://172.24.80.1:3000
+```
 
 # Connecting cameras
 
 - Go to the `webrtc-gui` folder, and run the script `rover_webrtc.py` using either:
-	```bash
-	python rover_webrtc.py
-	# OR
-	python3 rover_webrtc.py
-	```
+
+```bash
+python rover_webrtc.py
+# OR
+python3 rover_webrtc.py
+```
 - If successful, you should see:
-	```
-	INFO:root:Starting rover server at http://0.0.0.0:3001
-	======== Running on http://0.0.0.0:3001 ========
-	(Press CTRL+C to quit)
-	```
+
+```text
+INFO:root:Starting rover server at http://0.0.0.0:3001
+======== Running on http://0.0.0.0:3001 ========
+(Press CTRL+C to quit)
+```
 - If you cannot run the script, install dependencies using:
-	```bash
-	pip install -r requirements.txt
-	```
+
+```bash
+pip install -r requirements.txt
+```
 
 # Checking cameras
 
