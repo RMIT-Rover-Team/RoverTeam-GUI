@@ -36,8 +36,9 @@ export default function Home() {
 
     let connected = false;
     pc.ontrack = (event) => {
-      if (videoRefs[idx].current) {
-        videoRefs[idx].current.srcObject = event.streams[0];
+      const videoRef = videoRefs[idx];
+      if (videoRef && videoRef.current) {
+        videoRef.current.srcObject = event.streams[0];
         if (!connected) {
           setToast(`Connected to USB Camera ${cameraId} via WebRTC`);
           connected = true;
@@ -48,6 +49,10 @@ export default function Home() {
           });
           setTimeout(() => setToast(null), 3000);
         }
+      } else {
+        // Defensive: videoRef or videoRef.current is not set
+        setToast(`Video element not available for camera ${cameraId}`);
+        setTimeout(() => setToast(null), 3000);
       }
     };
 

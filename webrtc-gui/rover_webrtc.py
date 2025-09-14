@@ -24,17 +24,43 @@ class RoverCameraTrack(MediaStreamTrack):
         self.cap = cv2.VideoCapture(camera_id)
         if not self.cap.isOpened():
             raise Exception(f"Could not open video source {camera_id}")
+        # NORMAL RESOLUTION
+        # self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')) #video codec MJPG
+        # self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640) # frame width and height (640x480)
+        # self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        # TESTING - LOWER RESOLUTION 
+        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))  # MJPEG compression
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)   # reduce width
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)  # reduce height
+        self.cap.set(cv2.CAP_PROP_FPS, 15)            # lower fps
 
     async def recv(self):
+        start_time = time.time()
         ret, frame = self.cap.read()
+        end_time = time.time()
+        log_path = "bandwidth-Logs.txt"
         if not ret:
             logging.error("Failed to grab frame from camera")
+            log_msg = "[Bandwidth/Frame] Failed to grab frame from camera\n"
+            print(log_msg.strip())
+            with open(log_path, "a") as f:
+                f.write(log_msg)
             raise Exception("Camera frame not available")
-        new_frame = VideoFrame.from_ndarray(frame, format="bgr24")
+        # Resize frame to 640x480 before streaming
+        frame_resized = cv2.resize(frame, (640, 480))
+        frame_size = frame_resized.nbytes if hasattr(frame_resized, 'nbytes') else 0
+        elapsed = end_time - start_time
+        log_msg = f"[Bandwidth/Frame] Frame size: {frame_size} bytes, Acquisition time: {elapsed:.4f} seconds\n"
+        print(log_msg.strip())
+        with open(log_path, "a") as f:
+            f.write(log_msg)
+        if elapsed > 0.1:
+            warn_msg = f"[Bandwidth/Frame] WARNING: Frame acquisition took {elapsed:.2f}s (possible bandwidth/camera issue)\n"
+            print(warn_msg.strip())
+            with open(log_path, "a") as f:
+                f.write(warn_msg)
+        new_frame = VideoFrame.from_ndarray(frame_resized, format="bgr24")
         new_frame.pts = int(time.time() * 1000000)
         new_frame.time_base = Fraction(1, 1000000)
         return new_frame
@@ -104,14 +130,24 @@ async def on_shutdown(app):
 import glob
 def get_available_cameras():
     available = []
-    # Check indices 0-4 for USB cameras
-    for i in range(5):
+    max_checks = 20  # Maximum indices to check
+    max_failures = 5  # Stop after this many consecutive failures
+    failures = 0
+    for i in range(max_checks):
         cap = cv2.VideoCapture(i)
         if cap.isOpened():
             ret, frame = cap.read()
-            if ret:
+            if ret and frame is not None and hasattr(frame, 'size') and frame.size > 0:
                 available.append(i)
-        cap.release()
+                failures = 0  # Reset failures on success
+            else:
+                failures += 1
+            cap.release()
+        else:
+            failures += 1
+            cap.release()
+        if failures >= max_failures:
+            break
     return available
 
 async def list_cameras(request):
