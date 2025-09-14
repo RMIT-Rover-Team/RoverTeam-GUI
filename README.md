@@ -87,13 +87,15 @@ pip install -r requirements.txt
 
 # Checking cameras
 
-- The backend makes it easy: head to [localhost:3000/cameras](http://localhost:3000/cameras)
+- The backend makes it easy: head to [localhost:3000/cameras](http://localhost:3000/cameras) (on laptop)
+on rover: http://192.168.50.1:3001/cameras
 	- This will list all available USB cameras.
 - If you are connected to a camera or if it is not detected (e.g. not plugged in), it will not show. Please ensure this is done (don't be like Ridge haha).
 
 # Checking WebRTC server
 
-- There is also a backend to check the WebRTC server: head to [localhost:3001](http://localhost:3001)
+- There is also a backend to check the WebRTC server: head to [localhost:3001](http://localhost:3001) (on laptop)
+on rover: http://192.168.50.1:3001/
 	- This is hosted on the rover and the laptop (client) is connected to the Pi (host).
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
