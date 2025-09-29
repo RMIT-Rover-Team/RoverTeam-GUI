@@ -33,7 +33,7 @@ class RoverCameraTrack(MediaStreamTrack):
         self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))  # MJPEG compression
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)   # reduce width
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)  # reduce height
-        self.cap.set(cv2.CAP_PROP_FPS, 15)            # lower fps
+        # self.cap.set(cv2.CAP_PROP_FPS, 15)            # lower fps
 
     async def recv(self):
         start_time = time.time()
