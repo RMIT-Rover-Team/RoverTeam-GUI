@@ -1,3 +1,4 @@
+# testing camera connection
 import cv2
 for idx in [22, 21, 15, 14]:
     cap = cv2.VideoCapture(idx)
