@@ -14,24 +14,29 @@ export default function Home() {
   const peerConnections = useRef<(RTCPeerConnection | null)[]>([]);
   const [videoRefs, setVideoRefs] = useState<React.RefObject<HTMLVideoElement>[]>([]);
 
-  useEffect(() => {
-    fetch(`http://${ROVER_HOST}:3001/cameras`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.cameras) {
-          setAvailableCameras(data.cameras);
-          setConnectedCameras(new Array(data.cameras.length).fill(false));
-          setVideoRefs(data.cameras.map(() => createRef<HTMLVideoElement>()));
-          peerConnections.current = new Array(data.cameras.length).fill(null);
-        }
-      })
-      .catch(() => {
-        setAvailableCameras([]);
-        setConnectedCameras([]);
-        setVideoRefs([]);
-        peerConnections.current = [];
-      });
-  }, []);
+useEffect(() => {
+  fetch(`http://${ROVER_HOST}:3001/cameras`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.cameras) {
+        setAvailableCameras(data.cameras);
+        setConnectedCameras(new Array(data.cameras.length).fill(false));
+        setVideoRefs(data.cameras.map(() => createRef<HTMLVideoElement>()));
+        peerConnections.current = new Array(data.cameras.length).fill(null);
+
+        // Auto-connect to all cameras
+        data.cameras.forEach((cam: { id: number }, idx: number) => {
+          connectToRover(idx);
+        });
+      }
+    })
+    .catch(() => {
+      setAvailableCameras([]);
+      setConnectedCameras([]);
+      setVideoRefs([]);
+      peerConnections.current = [];
+    });
+}, []);
 
   async function connectToRover(idx: number) {
     const cameraId = availableCameras[idx]?.id;
