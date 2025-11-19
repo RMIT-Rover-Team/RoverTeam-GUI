@@ -128,7 +128,13 @@ async def offer(request):
         @pc.on("connectionstatechange")
         async def on_connectionstatechange():
             logging.info(f"Connection state is {pc.connectionState}")
+            # Notify when a peer connection becomes fully connected
+            if pc.connectionState == "connected":
+                logging.info(f"WebRTC connection established (handshake verified) for camera {camera_id}")
+                print(f"WebRTC: connection established and handshake verified for camera {camera_id}")
+
             if pc.connectionState in ("failed", "closed"):
+                logging.info(f"Connection state {pc.connectionState} - closing peer connection for camera {camera_id}")
                 await pc.close()
                 pcs.discard(pc)
 
