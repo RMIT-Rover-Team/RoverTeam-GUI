@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# package
+/package.json
+/yarn.lock
+/package-lock.json
 # next.js
 /.next/
 /out/
