@@ -3,7 +3,8 @@ import { useState, useRef, useEffect, createRef } from "react";
 
 export default function Home() {
   // Adjust this to your rover's IP where the Python WebRTC server is running
-  const ROVER_HOST = "192.168.50.1";
+  // (updated to the IP you mentioned)
+  const ROVER_HOST = "192.168.40.1";
 
   const [activeTab, setActiveTab] = useState("Extraction");
   const [toast, setToast] = useState<string | null>(null);
@@ -16,7 +17,10 @@ export default function Home() {
 
 useEffect(() => {
   fetch(`http://${ROVER_HOST}:3001/cameras`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`GET /cameras returned ${res.status}`);
+      return res.json();
+    })
     .then((data) => {
       if (data.cameras) {
         setAvailableCameras(data.cameras);
@@ -30,11 +34,14 @@ useEffect(() => {
         });
       }
     })
-    .catch(() => {
+    .catch((err) => {
+      console.error("Failed to fetch camera list:", err);
+      setToast(`Failed to fetch cameras: ${err.message}`);
       setAvailableCameras([]);
       setConnectedCameras([]);
       setVideoRefs([]);
       peerConnections.current = [];
+      setTimeout(() => setToast(null), 3000);
     });
 }, []);
 
@@ -92,10 +99,18 @@ useEffect(() => {
           camera_id: cameraId,
         }),
       });
+      if (!response.ok) {
+        const text = await response.text().catch(() => "");
+        console.error("Offer failed", response.status, text);
+        setToast(`Offer failed: ${response.status}`);
+        setTimeout(() => setToast(null), 3000);
+        return;
+      }
       const answer = await response.json();
       await pc.setRemoteDescription(new window.RTCSessionDescription(answer));
       peerConnections.current[idx] = pc;
     } catch (err) {
+      console.error("Error during connectToRover:", err);
       setToast(`Connection to USB Camera ${cameraId} failed`);
       setTimeout(() => setToast(null), 3000);
     }
