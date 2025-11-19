@@ -233,5 +233,15 @@ if __name__ == "__main__":
     app.router.add_get("/", root)
     app.router.add_get("/cameras", list_cameras)
 
+    # Check for available camera interfaces on startup and log helpful messages
+    detected = get_available_cameras()
+    if not detected:
+        logging.warning("No cameras detected. Please check USB connections.")
+        print("No cameras detected — please check USB connections.")
+    else:
+        devs = ", ".join([f"/dev/video{idx}" for idx in detected])
+        logging.info(f"Detected camera interfaces: {devs}")
+        print(f"Detected camera interfaces: {devs}")
+
     logging.info(f"Starting rover server at http://{HOST}:{PORT}")
     web.run_app(app, host=HOST, port=PORT)
