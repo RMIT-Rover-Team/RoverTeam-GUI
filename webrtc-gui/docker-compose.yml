@@ -1,8 +1,7 @@
-version: '3.8'
 services:
   rover-server:
     build: .
-    container_name: rover_webrtc_server
+    container_name: rover_webrtc
     devices:
       - "/dev/video0:/dev/video0" # map cameras as needed (adjust host device paths)
     ports:
