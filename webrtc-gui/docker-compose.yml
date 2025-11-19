@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  rover-server:
+    build: .
+    container_name: rover_webrtc_server
+    devices:
+      - "/dev/video0:/dev/video0" # map cameras as needed (adjust host device paths)
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+  frontend:
+    image: node:18
+    container_name: rover_frontend
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: ["bash", "-lc", "npm install --no-audit --no-fund && npm run dev -- --host 0.0.0.0"]
+    restart: unless-stopped
