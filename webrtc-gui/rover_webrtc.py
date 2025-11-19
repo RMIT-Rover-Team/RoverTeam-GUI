@@ -175,10 +175,9 @@ async def on_shutdown(app):
 
 def get_available_cameras():
     """
-    Improved detection that works for:
-    - USB cameras
-    - Pi camera
-    - v4l2loopback virtual cameras
+    Detect available cameras:
+    - USB cameras (real frames)
+    - v4l2loopback virtual cameras (open OK even if no frames yet)
     """
     video_devices = sorted(glob.glob("/dev/video*"))
     available = []
@@ -186,13 +185,25 @@ def get_available_cameras():
     for dev in video_devices:
         idx = int(dev.replace("/dev/video", ""))
         cap = cv2.VideoCapture(idx)
-        if cap.isOpened():
-            ret, frame = cap.read()
+
+        if not cap.isOpened():
+            continue
+
+        # If it's v4l2loopback, treat it as valid automatically
+        devname = open(f"/sys/class/video4linux/video{idx}/name").read().strip()
+        if "loopback" in devname.lower():
+            available.append(idx)
             cap.release()
-            if ret:
-                available.append(idx)
+            continue
+
+        # Physical / real: require at least one frame to succeed
+        ret, frame = cap.read()
+        cap.release()
+        if ret:
+            available.append(idx)
 
     return available
+
 
 
 async def list_cameras(request):
