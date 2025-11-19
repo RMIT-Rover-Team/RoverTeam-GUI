@@ -169,6 +169,12 @@ if __name__ == "__main__":
     available = list_camera_indices()  # <<< ADDED
     logging.info(f"[Startup] Cameras detected at boot: {available}")  # <<< ADDED
 
+    SERVER_IP = "192.168.40.1"
+
+    logging.info(f"To send WebRTC offers:   http://{SERVER_IP}:3001/offer")
+    logging.info(f"To list cameras:         http://{SERVER_IP}:3001/cameras")
+
+
     app = web.Application()
     app.router.add_post("/offer", handle_offer)
     app.router.add_get("/cameras", handle_cameras)
