@@ -32,9 +32,11 @@ def auto_detect_camera():
                 ret, frame = cap.read()
                 cap.release()
                 if ret:
+                    logging.info(f"Auto-detected working device: {dev} (index {idx})")
                     print(f"[Camera] Auto-detected working device: {dev}")
                     return idx
         except:
+            logging.debug(f"auto_detect_camera: failed to probe {dev}")
             pass
 
     raise Exception("No working video device found (physical or virtual)")
@@ -55,18 +57,21 @@ class RoverCameraTrack(MediaStreamTrack):
 
         # If camera_id fails, auto-detect a fallback virtual cam
         if not self.cap.isOpened():
+            logging.warning(f"Camera {camera_id} failed to open, attempting auto-detect")
             print(f"[Camera] Camera {camera_id} failed, attempting auto-detect…")
             camera_id = auto_detect_camera()
             self.camera_id = camera_id
             self.cap = cv2.VideoCapture(camera_id)
 
         if not self.cap.isOpened():
+            logging.error(f"Could not open any video device (tried {camera_id})")
             raise Exception(f"Could not open ANY video device (tried {camera_id})")
 
         # lower resolution for WebRTC performance
         self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+        logging.info(f"Using camera index {self.camera_id} (320x240 capture), codec MJPG")
 
     async def recv(self):
         start_time = time.time()
@@ -78,14 +83,16 @@ class RoverCameraTrack(MediaStreamTrack):
             logging.error("Failed to grab frame from camera")
             with open(log_path, "a") as f:
                 f.write("[Bandwidth/Frame] Failed to grab frame\n")
+            logging.warning(f"Camera {self.camera_id}: failed to grab frame")
             raise Exception("Camera frame not available")
 
         frame_resized = cv2.resize(frame, (640, 480))
         frame_size = frame_resized.nbytes
 
         elapsed = end_time - start_time
-        log_msg = f"[Bandwidth/Frame] Frame size: {frame_size} bytes, Acquisition time: {elapsed:.4f}s\n"
-        print(log_msg.strip())
+        log_msg = f"[Bandwidth/Frame] camera={self.camera_id} size={frame_size}B acquire_time={elapsed:.4f}s\n"
+        # log to terminal and file
+        logging.info(log_msg.strip())
         with open(log_path, "a") as f:
             f.write(log_msg)
 
