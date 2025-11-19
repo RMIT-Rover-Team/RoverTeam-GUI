@@ -5,6 +5,8 @@ import cv2
 import glob
 import time
 from fractions import Fraction
+from pathlib import Path
+from datetime import datetime
 
 from aiohttp import web
 from aiortc import RTCPeerConnection, RTCSessionDescription
@@ -15,6 +17,46 @@ from av import VideoFrame
 HOST = "0.0.0.0"
 PORT = 3001
 pcs = set()
+BANDWIDTH_LOG_PATH = None
+
+
+def setup_run_logging():
+    """Create a timestamped run directory under ./logs and configure logging to file+console.
+
+    Returns the path to the bandwidth log file for per-frame appends.
+    """
+    logs_root = Path("logs")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    run_dir = logs_root / timestamp
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    server_log = run_dir / "server.log"
+    bandwidth_log = run_dir / "bandwidth-Logs.txt"
+
+    # Configure root logger: keep console + file handlers
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+
+    formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+
+    # Stream (console) handler
+    sh = logging.StreamHandler()
+    sh.setFormatter(formatter)
+
+    # File handler
+    fh = logging.FileHandler(server_log, encoding="utf-8")
+    fh.setFormatter(formatter)
+
+    # Clear existing handlers then add ours
+    if logger.handlers:
+        for h in list(logger.handlers):
+            logger.removeHandler(h)
+
+    logger.addHandler(sh)
+    logger.addHandler(fh)
+
+    logging.info(f"Logging initialized. Run directory: {run_dir}")
+    return str(bandwidth_log)
 
 
 # ---------------------------------------------------------
@@ -87,6 +129,22 @@ class RoverCameraTrack(MediaStreamTrack):
         if not ret:
             raise Exception(f"Camera {self.camera_id} failed to read frame")
 
+        # Log bandwidth/frame info (size and timestamp) to both console and a run-specific bandwidth file
+        try:
+            frame_size = frame.nbytes
+        except Exception:
+            frame_size = None
+
+        log_msg = f"[Bandwidth/Frame] camera={self.camera_id} size={frame_size}B"
+        logging.info(log_msg)
+        # append to bandwidth log file if available
+        if BANDWIDTH_LOG_PATH:
+            try:
+                with open(BANDWIDTH_LOG_PATH, "a", encoding="utf-8") as f:
+                    f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {log_msg}\n")
+            except Exception:
+                logging.exception("Failed to write bandwidth log")
+
         frm = VideoFrame.from_ndarray(frame, format="bgr24")
         frm.pts = int(time.time() * 1_000_000)
         frm.time_base = Fraction(1, 1_000_000)
@@ -106,7 +164,9 @@ async def handle_offer(request):
     params = await request.json()
     camera_id = params.get("camera_id")
 
-    logging.info(f"[API] /offer received for camera {camera_id}")  # <<< ADDED
+    remote = request.remote
+    origin = request.headers.get("Origin")
+    logging.info(f"[API] /offer received for camera {camera_id} from {remote} Origin={origin}")  # <<< ADDED
 
     available = list_camera_indices()
     if camera_id not in available:
@@ -147,7 +207,9 @@ async def handle_offer(request):
 # ---------------------------------------------------------
 
 async def handle_cameras(request):
-    logging.info("[API] /cameras queried")  # <<< ADDED
+    remote = request.remote
+    origin = request.headers.get("Origin")
+    logging.info(f"[API] /cameras queried from {remote} Origin={origin}")  # <<< ADDED
     cameras = list_camera_indices()
     return web.json_response(
         {"cameras": [{"id": c, "label": f"Camera {c}"} for c in cameras]},
@@ -160,24 +222,25 @@ async def handle_cameras(request):
 # ---------------------------------------------------------
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    # initialize logging (creates ./logs/<timestamp>/server.log and bandwidth log path)
+    # set module-level BANDWIDTH_LOG_PATH without using 'global' to satisfy linters
+    globals()["BANDWIDTH_LOG_PATH"] = setup_run_logging()
 
     logging.info("========================================")
     logging.info("   Rover WebRTC Camera Server Starting  ")
     logging.info("========================================")
 
-    available = list_camera_indices()  # <<< ADDED
-    logging.info(f"[Startup] Cameras detected at boot: {available}")  # <<< ADDED
+    available = list_camera_indices()
+    logging.info(f"[Startup] Cameras detected at boot: {available}")
 
     SERVER_IP = "192.168.40.1"
 
     logging.info(f"To send WebRTC offers:   http://{SERVER_IP}:3001/offer")
     logging.info(f"To list cameras:         http://{SERVER_IP}:3001/cameras")
 
-
     app = web.Application()
     app.router.add_post("/offer", handle_offer)
     app.router.add_get("/cameras", handle_cameras)
 
-    logging.info(f"[Startup] Server listening at http://{HOST}:{PORT}")  # <<< ADDED
+    logging.info(f"[Startup] Server listening at http://{HOST}:{PORT}")
     web.run_app(app, host=HOST, port=PORT)
