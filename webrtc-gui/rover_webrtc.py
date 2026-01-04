@@ -238,9 +238,39 @@ if __name__ == "__main__":
     logging.info(f"To send WebRTC offers:   http://{SERVER_IP}:3001/offer")
     logging.info(f"To list cameras:         http://{SERVER_IP}:3001/cameras")
 
-    app = web.Application()
+    # Simple CORS middleware to allow browser clients from other origins
+    @web.middleware
+    async def cors_middleware(request, handler):
+        if request.method == "OPTIONS":
+            return web.Response(status=200, headers={
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST,OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type,Authorization",
+            })
+
+        resp = await handler(request)
+        # Some handlers return plain strings or other types; ensure it's a Response
+        if isinstance(resp, web.Response):
+            resp.headers.setdefault("Access-Control-Allow-Origin", "*")
+        return resp
+
+    app = web.Application(middlewares=[cors_middleware])
+    # Add a small root endpoint for quick health checks
+    async def handle_root(request):
+        return web.Response(text="Rover WebRTC Camera Server")
+
+    app.router.add_get("/", handle_root)
     app.router.add_post("/offer", handle_offer)
     app.router.add_get("/cameras", handle_cameras)
+    app.router.add_options("/offer", lambda request: web.Response(
+    status=200,
+    headers={
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type,Authorization",
+    }
+))
+
 
     logging.info(f"[Startup] Server listening at http://{HOST}:{PORT}")
     web.run_app(app, host=HOST, port=PORT)
