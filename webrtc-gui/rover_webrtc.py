@@ -1,276 +1,161 @@
 import asyncio
-import json
 import logging
-import cv2
 import glob
-import time
-from fractions import Fraction
-from pathlib import Path
-from datetime import datetime
-
+import os
+import platform
 from aiohttp import web
 from aiortc import RTCPeerConnection, RTCSessionDescription
-from aiortc.contrib.media import MediaStreamTrack
-from av import VideoFrame
+from aiortc.contrib.media import MediaPlayer
 
-
+# Listen on all interfaces so LAN devices can connect
 HOST = "0.0.0.0"
 PORT = 3001
+
+# Store active peer connections to prevent garbage collection
 pcs = set()
-BANDWIDTH_LOG_PATH = None
+# Store media players to stop them cleanly
+players = {}
 
-
-def setup_run_logging():
-    """Create a timestamped run directory under ./logs and configure logging to file+console.
-
-    Returns the path to the bandwidth log file for per-frame appends.
-    """
-    logs_root = Path("logs")
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    run_dir = logs_root / timestamp
-    run_dir.mkdir(parents=True, exist_ok=True)
-
-    server_log = run_dir / "server.log"
-    bandwidth_log = run_dir / "bandwidth-Logs.txt"
-
-    # Configure root logger: keep console + file handlers
-    logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
-
-    formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-
-    # Stream (console) handler
-    sh = logging.StreamHandler()
-    sh.setFormatter(formatter)
-
-    # File handler
-    fh = logging.FileHandler(server_log, encoding="utf-8")
-    fh.setFormatter(formatter)
-
-    # Clear existing handlers then add ours
-    if logger.handlers:
-        for h in list(logger.handlers):
-            logger.removeHandler(h)
-
-    logger.addHandler(sh)
-    logger.addHandler(fh)
-
-    logging.info(f"Logging initialized. Run directory: {run_dir}")
-    return str(bandwidth_log)
-
+def setup_logging():
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 # ---------------------------------------------------------
-# CAMERA ENUMERATION — reliable and clean
+# FAST CAMERA SCAN (Filesystem based, Non-blocking)
 # ---------------------------------------------------------
-
 def list_camera_indices():
-    """Return only real cameras that can deliver frames."""
-    cameras = []
-
-    logging.info("[Startup] Scanning /dev/video* devices...")  # <<< ADDED
-
-    for dev in sorted(glob.glob("/dev/video*")):
-        idx = int(dev.replace("/dev/video", ""))
-
-        try:
-            name = open(f"/sys/class/video4linux/video{idx}/name").read().strip()
-            logging.info(f"[Startup] Found device video{idx}: {name}")  # <<< ADDED
-
-            if "loopback" in name.lower():
-                logging.info(f"[Startup] Skipping loopback device video{idx}")  # <<< ADDED
-                continue
-
-        except Exception as e:
-            logging.warning(f"[Startup] Unable to read device name for video{idx}: {e}")  # <<< ADDED
-            continue
-
-        cap = cv2.VideoCapture(idx)
-        if not cap.isOpened():
-            logging.warning(f"[Startup] video{idx} could not be opened.")  # <<< ADDED
-            continue
-
-        ret, _ = cap.read()
-        cap.release()
-
-        if ret:
-            logging.info(f"[Startup] video{idx} is usable.")  # <<< ADDED
-            cameras.append(idx)
-        else:
-            logging.warning(f"[Startup] video{idx} opened but cannot return frames.")  # <<< ADDED
-
-    logging.info(f"[Startup] Final camera list: {cameras}")  # <<< ADDED
+    """Return only known working camera indices."""
+    logging.info("[Startup] Returning known camera indices...")
+    cameras = [0, 2, 4, 6, 8, 10, 12, 14]  # Your working cameras
+    
+    # Verify they exist
+    for cam in cameras[:]:  # Copy list to iterate
+        if not os.path.exists(f"/dev/video{cam}"):
+            logging.warning(f"Camera video{cam} doesn't exist, removing from list")
+            cameras.remove(cam)
+    
     return cameras
 
-
 # ---------------------------------------------------------
-# MEDIA TRACK — handles grabbing frames
+# CONNECTION HANDLER
 # ---------------------------------------------------------
-
-class RoverCameraTrack(MediaStreamTrack):
-    kind = "video"
-
-    def __init__(self, camera_id: int):
-        super().__init__()
-        self.camera_id = camera_id
-
-        self.cap = cv2.VideoCapture(camera_id, cv2.CAP_V4L2)
-        if not self.cap.isOpened():
-            raise Exception(f"Camera {camera_id} failed to open")
-
-        # Force MJPEG → compatibility with most UVC cameras
-        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-
-        logging.info(f"[Camera] Streaming from /dev/video{camera_id}")
-
-    async def recv(self):
-        ret, frame = self.cap.read()
-        if not ret:
-            raise Exception(f"Camera {self.camera_id} failed to read frame")
-
-        # Log bandwidth/frame info (size and timestamp) to both console and a run-specific bandwidth file
-        try:
-            frame_size = frame.nbytes
-        except Exception:
-            frame_size = None
-
-        log_msg = f"[Bandwidth/Frame] camera={self.camera_id} size={frame_size}B"
-        logging.info(log_msg)
-        # append to bandwidth log file if available
-        if BANDWIDTH_LOG_PATH:
-            try:
-                with open(BANDWIDTH_LOG_PATH, "a", encoding="utf-8") as f:
-                    f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {log_msg}\n")
-            except Exception:
-                logging.exception("Failed to write bandwidth log")
-
-        frm = VideoFrame.from_ndarray(frame, format="bgr24")
-        frm.pts = int(time.time() * 1_000_000)
-        frm.time_base = Fraction(1, 1_000_000)
-        return frm
-
-    def stop(self):
-        if self.cap.isOpened():
-            self.cap.release()
-        super().stop()
-
-
-# ---------------------------------------------------------
-# API — /offer
-# ---------------------------------------------------------
-
 async def handle_offer(request):
     params = await request.json()
-    camera_id = params.get("camera_id")
-
-    remote = request.remote
-    origin = request.headers.get("Origin")
-    logging.info(f"[API] /offer received for camera {camera_id} from {remote} Origin={origin}")  # <<< ADDED
-
-    available = list_camera_indices()
-    if camera_id not in available:
-        return web.Response(status=404, text=f"Camera {camera_id} not available")
+    camera_id = int(params.get("camera_id", 0))
+    
+    # Simple check if device file exists
+    if not os.path.exists(f"/dev/video{camera_id}"):
+        return web.Response(status=404, text=f"Camera {camera_id} not found")
 
     pc = RTCPeerConnection()
     pcs.add(pc)
 
+    # --- PASSTHROUGH CONFIGURATION ---
+    # We request MJPEG from the camera to save USB bandwidth.
+    # The MediaPlayer handles reading V4L2 -> Decoding -> Passing to WebRTC
+    options = {
+        "format": "v4l2", 
+        "video_size": "640x480", 
+        "framerate": "30",
+        "input_format": "mjpeg" 
+    }
+
+    try:
+        player = MediaPlayer(f"/dev/video{camera_id}", format="v4l2", options=options)
+        players[pc] = player
+    except Exception as e:
+        logging.error(f"Failed to open camera {camera_id}: {e}")
+        return web.Response(status=500, text=str(e))
+
+    # Add the track to the connection
+    if player.video:
+        pc.addTrack(player.video)
+
     @pc.on("connectionstatechange")
     async def on_conn_change():
-        logging.info(f"WebRTC state: {pc.connectionState}")
         if pc.connectionState in ("failed", "closed"):
-            await pc.close()
-            pcs.discard(pc)
+            await cleanup_pc(pc)
 
-    track = RoverCameraTrack(camera_id)
-    pc.addTrack(track)
-
+    # Standard WebRTC Signaling
     offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
     await pc.setRemoteDescription(offer)
 
     answer = await pc.createAnswer()
     await pc.setLocalDescription(answer)
 
-    logging.info("[API] Returning SDP answer")  # <<< ADDED
+    return web.json_response({
+        "sdp": pc.localDescription.sdp,
+        "type": pc.localDescription.type,
+    })
 
-    return web.json_response(
-        {
-            "sdp": pc.localDescription.sdp,
-            "type": pc.localDescription.type,
-        },
-        headers={"Access-Control-Allow-Origin": "*"}
-    )
-
-
-# ---------------------------------------------------------
-# API — /cameras
-# ---------------------------------------------------------
+async def cleanup_pc(pc):
+    """Stop the media player and close the connection."""
+    if pc in players:
+        player = players[pc]
+        if player:
+            player.stop()
+        del players[pc]
+    
+    await pc.close()
+    pcs.discard(pc)
 
 async def handle_cameras(request):
-    remote = request.remote
-    origin = request.headers.get("Origin")
-    logging.info(f"[API] /cameras queried from {remote} Origin={origin}")  # <<< ADDED
     cameras = list_camera_indices()
-    return web.json_response(
-        {"cameras": [{"id": c, "label": f"Camera {c}"} for c in cameras]},
-        headers={"Access-Control-Allow-Origin": "*"}
-    )
-
+    return web.json_response({
+        "cameras": [{"id": c, "label": f"Camera {c}"} for c in cameras]
+    })
 
 # ---------------------------------------------------------
-# ENTRY POINT
+# CORS MIDDLEWARE
 # ---------------------------------------------------------
+@web.middleware
+async def cors_middleware(request, handler):
+    if request.method == "OPTIONS":
+        # Preflight request - respond with CORS headers
+        return web.Response(
+            status=200,
+            headers={
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Max-Age": "86400",  # 24 hours
+            }
+        )
+    
+    # Handle actual request
+    response = await handler(request)
+    
+    # Add CORS headers to the response
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    
+    return response
+
+# ---------------------------------------------------------
+# SERVER SETUP
+# ---------------------------------------------------------
+async def on_shutdown(app):
+    coros = [cleanup_pc(pc) for pc in set(pcs)]
+    await asyncio.gather(*coros)
 
 if __name__ == "__main__":
-    # initialize logging (creates ./logs/<timestamp>/server.log and bandwidth log path)
-    # set module-level BANDWIDTH_LOG_PATH without using 'global' to satisfy linters
-    globals()["BANDWIDTH_LOG_PATH"] = setup_run_logging()
-
-    logging.info("========================================")
-    logging.info("   Rover WebRTC Camera Server Starting  ")
-    logging.info("========================================")
-
-    available = list_camera_indices()
-    logging.info(f"[Startup] Cameras detected at boot: {available}")
-
-    SERVER_IP = "192.168.40.1"
-
-    logging.info(f"To send WebRTC offers:   http://{SERVER_IP}:3001/offer")
-    logging.info(f"To list cameras:         http://{SERVER_IP}:3001/cameras")
-
-    # Simple CORS middleware to allow browser clients from other origins
-    @web.middleware
-    async def cors_middleware(request, handler):
-        if request.method == "OPTIONS":
-            return web.Response(status=200, headers={
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "POST,OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type,Authorization",
-            })
-
-        resp = await handler(request)
-        # Some handlers return plain strings or other types; ensure it's a Response
-        if isinstance(resp, web.Response):
-            resp.headers.setdefault("Access-Control-Allow-Origin", "*")
-        return resp
-
+    setup_logging()
+    
     app = web.Application(middlewares=[cors_middleware])
-    # Add a small root endpoint for quick health checks
-    async def handle_root(request):
-        return web.Response(text="Rover WebRTC Camera Server")
-
-    app.router.add_get("/", handle_root)
+    
     app.router.add_post("/offer", handle_offer)
     app.router.add_get("/cameras", handle_cameras)
-    app.router.add_options("/offer", lambda request: web.Response(
-    status=200,
-    headers={
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST,OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type,Authorization",
-    }
-))
+    
+    # Handle OPTIONS requests for all routes
+    app.router.add_route("*", "/{tail:.*}", lambda request: web.Response(
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        }
+    ) if request.method == "OPTIONS" else web.Response(status=405))
+    
+    app.on_shutdown.append(on_shutdown)
 
-
-    logging.info(f"[Startup] Server listening at http://{HOST}:{PORT}")
+    logging.info(f"Rover WebRTC Server running on http://{HOST}:{PORT}")
     web.run_app(app, host=HOST, port=PORT)

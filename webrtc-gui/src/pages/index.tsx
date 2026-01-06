@@ -2,95 +2,83 @@ import Head from "next/head";
 import { useState, useRef, useEffect, createRef } from "react";
 
 export default function Home() {
-  // Adjust this to your rover's IP where the Python WebRTC server is running
-  // (updated to the IP you mentioned)
-  const ROVER_HOST = "192.168.40.1";
+  const [roverUrl, setRoverUrl] = useState("");
+  const [availableCameras, setAvailableCameras] = useState([]);
+  const [connectedCameras, setConnectedCameras] = useState([]);
+  const [toast, setToast] = useState(null);
+  
+  const videoRefs = useRef([]);
+  const peerConnections = useRef([]);
 
-  const [activeTab, setActiveTab] = useState("Extraction");
-  const [toast, setToast] = useState<string | null>(null);
-  const [availableCameras, setAvailableCameras] = useState<
-    { id: number; label: string }[]
-  >([]);
-  const [connectedCameras, setConnectedCameras] = useState<boolean[]>([]);
-  const peerConnections = useRef<(RTCPeerConnection | null)[]>([]);
-  const [videoRefs, setVideoRefs] = useState<React.RefObject<HTMLVideoElement>[]>([]);
+  useEffect(() => {
+    // AUTOMATIC LAN DETECTION
+    // If you visit http://192.168.1.50:3000, this sets the API to http://192.168.1.50:3001
+    const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
+    const url = `http://${hostname}:3001`;
+    setRoverUrl(url);
 
-useEffect(() => {
-  fetch(`http://${ROVER_HOST}:3001/cameras`)
-    .then((res) => {
-      if (!res.ok) throw new Error(`GET /cameras returned ${res.status}`);
-      return res.json();
-    })
-    .then((data) => {
-      if (data.cameras) {
-        setAvailableCameras(data.cameras);
-        setConnectedCameras(new Array(data.cameras.length).fill(false));
-        setVideoRefs(data.cameras.map(() => createRef<HTMLVideoElement>()));
-        peerConnections.current = new Array(data.cameras.length).fill(null);
+    // Fetch cameras from that dynamically detected URL
+    fetch(`${url}/cameras`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.cameras) {
+          setAvailableCameras(data.cameras);
+          setConnectedCameras(new Array(data.cameras.length).fill(false));
+          
+          videoRefs.current = data.cameras.map(() => createRef());
+          peerConnections.current = new Array(data.cameras.length).fill(null);
 
-        // Auto-connect to all cameras
-        data.cameras.forEach((cam: { id: number }, idx: number) => {
-          connectToRover(idx);
-        });
-      }
-    })
-    .catch((err) => {
-      console.error("Failed to fetch camera list:", err);
-      setToast(`Failed to fetch cameras: ${err.message}`);
-      setAvailableCameras([]);
-      setConnectedCameras([]);
-      setVideoRefs([]);
-      peerConnections.current = [];
-      setTimeout(() => setToast(null), 3000);
+          // Auto-connect
+          data.cameras.forEach((_, idx) => connectToCamera(idx, data.cameras[idx].id, url));
+        }
+      })
+      .catch((err) => showToast(`Error connecting to rover at ${url}: ${err.message}`));
+
+    return () => {
+      peerConnections.current.forEach(pc => pc && pc.close());
+    };
+  }, []);
+
+  const showToast = (msg) => {
+    setToast(msg);
+    setTimeout(() => setToast(null), 3000);
+  };
+
+  const connectToCamera = async (idx, cameraId, baseUrl) => {
+    if (peerConnections.current[idx]) return;
+
+    showToast(`Connecting Camera ${cameraId}...`);
+    
+    // LAN CONFIG: No ICE servers needed. 
+    // This defaults to Host Candidates (Local IP), which is perfect for LAN.
+    const pc = new RTCPeerConnection({
+        iceServers: [] 
     });
-}, []);
 
-  async function connectToRover(idx: number) {
-    const cameraId = availableCameras[idx]?.id;
-    if (cameraId === undefined) return;
-    setToast(`Connecting to rover USB camera ${cameraId}...`);
-
-    if (peerConnections.current[idx]) {
-      setToast(`Camera ${cameraId} already connected`);
-      setTimeout(() => setToast(null), 2000);
-      return;
-    }
-
-    const pc = new window.RTCPeerConnection();
     pc.addTransceiver("video", { direction: "recvonly" });
 
-    let connected = false;
     pc.ontrack = (event) => {
-      const videoRef = videoRefs[idx];
-      if (videoRef && videoRef.current) {
-        // Attach the incoming MediaStream and start playback. Some browsers
-        // require an explicit .play() call after setting srcObject.
-        videoRef.current.srcObject = event.streams[0];
-        // play() returns a promise; ignore or catch to avoid unhandled rejections
-        const playPromise = videoRef.current.play();
-        if (playPromise && typeof playPromise.then === "function") {
-          playPromise.catch(() => {
-            /* autoplay might be blocked; user interaction may be required */
-          });
-        }
-        if (!connected) {
-          setToast(`Connected to USB Camera ${cameraId} via WebRTC`);
-          connected = true;
-          setConnectedCameras((prev) => {
-            const updated = [...prev];
-            updated[idx] = true;
-            return updated;
-          });
-          setTimeout(() => setToast(null), 3000);
-        }
+      const vid = videoRefs.current[idx]?.current;
+      if (vid) {
+        vid.srcObject = event.streams[0];
+        vid.play().catch(e => console.warn("Autoplay blocked:", e));
+        
+        setConnectedCameras(prev => {
+           const next = [...prev];
+           next[idx] = true;
+           return next;
+        });
       }
     };
+
+    peerConnections.current[idx] = pc;
 
     try {
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
 
-      const response = await fetch(`http://${ROVER_HOST}:3001/offer`, {
+      // Use the baseUrl passed in (ensures we don't rely on stale state)
+      const res = await fetch(`${baseUrl}/offer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -99,92 +87,62 @@ useEffect(() => {
           camera_id: cameraId,
         }),
       });
-      if (!response.ok) {
-        const text = await response.text().catch(() => "");
-        console.error("Offer failed", response.status, text);
-        setToast(`Offer failed: ${response.status}`);
-        setTimeout(() => setToast(null), 3000);
-        return;
-      }
-      const answer = await response.json();
-      await pc.setRemoteDescription(new window.RTCSessionDescription(answer));
-      peerConnections.current[idx] = pc;
+
+      if (!res.ok) throw new Error(await res.text());
+
+      const answer = await res.json();
+      await pc.setRemoteDescription(answer);
+      
+      showToast(`Camera ${cameraId} Live`);
+
     } catch (err) {
-      console.error("Error during connectToRover:", err);
-      setToast(`Connection to USB Camera ${cameraId} failed`);
-      setTimeout(() => setToast(null), 3000);
+      console.error(err);
+      showToast(`Failed: ${err.message}`);
+      // Clean up failed connection
+      pc.close();
+      peerConnections.current[idx] = null;
     }
-  }
+  };
 
   return (
-    <>
+    <div style={{ background: "#111", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: 20 }}>
       <Head>
-        <title>Rover GUI</title>
+        <title>Rover Feed</title>
       </Head>
-      <div className="rover-bg">
-        {toast && (
-          <div
-            style={{
-              position: "fixed",
-              top: 24,
-              left: "50%",
-              transform: "translateX(-50%)",
-              background: "#222",
-              color: "#fff",
-              padding: "12px 32px",
-              borderRadius: 8,
-              boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-              zIndex: 9999,
-              fontSize: 18,
-            }}
-          >
-            {toast}
-          </div>
-        )}
-        <div className="rover-layout">
-          {/* ...sidebar, navbar etc... */}
-          <div className="rover-main">
-            <div style={{ display: activeTab === "Extraction" ? "block" : "none" }}>
-              <div className="rover-cameras-label">USB Cameras</div>
-              {/* Suppressed the 'No USB cameras detected' message per user request */}
-              <div className="rover-cameras-grid">
-                {availableCameras.map((cam, i) => (
-                  <div key={cam.id} className="rover-camera" style={{ position: "relative" }}>
-                    <button
-                      onClick={() => connectToRover(i)}
-                      style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }}
-                      disabled={connectedCameras[i]}
-                    >
-                      {connectedCameras[i] ? "Connected" : "Connect"}
-                    </button>
-                    <video
-                      ref={videoRefs[i]}
-                      autoPlay
-                      playsInline
-                      style={{ width: "100%", height: "100%", background: "#000" }}
-                    />
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: 8,
-                        left: 8,
-                        color: "#fff",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {cam.label}
-                    </div>
-                    <div style={{ position: "absolute", bottom: 8, left: 8, color: "#fff", fontSize: 12 }}>
-                      Index: {cam.id}
-                    </div>
-                  </div>
-                ))}
-              </div>
+
+      {toast && (
+        <div style={{
+          position: "fixed", top: 20, left: "50%", transform: "translate(-50%)",
+          background: "#333", padding: "10px 20px", borderRadius: 8, zIndex: 100, boxShadow: "0 2px 10px rgba(0,0,0,0.5)"
+        }}>
+          {toast}
+        </div>
+      )}
+
+      <h1>Rover Camera Feed</h1>
+      <p style={{color: "#888", fontSize: "0.9rem"}}>Connected to Rover at: {roverUrl}</p>
+      
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: 20 }}>
+        {availableCameras.map((cam, i) => (
+          <div key={cam.id} style={{ background: "#222", padding: 10, borderRadius: 8 }}>
+            <div style={{ marginBottom: 5, fontWeight: "bold", display:"flex", justifyContent:"space-between" }}>
+              <span>{cam.label}</span>
+              <span style={{color: connectedCameras[i] ? "#4f4" : "#f44"}}>
+                ● {connectedCameras[i] ? "LIVE" : "OFFLINE"}
+              </span>
+            </div>
+            <div style={{ position: "relative", paddingTop: "75%", background: "#000" }}>
+              <video
+                ref={videoRefs.current[i]}
+                autoPlay
+                playsInline
+                muted // Muted often helps autoplay work reliably
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }}
+              />
             </div>
           </div>
-          {/* right sidebar... */}
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

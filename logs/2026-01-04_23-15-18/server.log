@@ -1,0 +1,2442 @@
+2026-01-04 23:15:18,715 INFO Logging initialized. Run directory: logs/2026-01-04_23-15-18
+2026-01-04 23:15:18,715 INFO ========================================
+2026-01-04 23:15:18,716 INFO    Rover WebRTC Camera Server Starting  
+2026-01-04 23:15:18,716 INFO ========================================
+2026-01-04 23:15:18,716 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:15:18,728 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:15:19,203 INFO [Startup] video0 is usable.
+2026-01-04 23:15:19,203 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:15:19,280 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:15:19,281 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:15:19,297 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:15:19,298 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:15:19,313 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:15:19,313 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:15:19,327 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:15:19,328 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:15:19,339 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:15:19,340 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:15:29,360 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:15:29,361 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:15:39,384 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:15:39,386 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:15:39,520 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:15:39,521 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:15:39,537 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:15:39,539 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:15:39,552 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:15:39,553 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:15:39,961 INFO [Startup] video2 is usable.
+2026-01-04 23:15:39,962 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:15:39,976 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:15:39,976 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:15:50,002 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:15:50,004 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:16:00,026 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:16:00,027 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:16:00,159 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:16:00,160 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:16:00,173 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:16:00,174 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:16:00,186 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:16:00,187 INFO [Startup] Final camera list: [0, 2]
+2026-01-04 23:16:00,187 INFO [Startup] Cameras detected at boot: [0, 2]
+2026-01-04 23:16:00,187 INFO To send WebRTC offers:   http://192.168.40.1:3001/offer
+2026-01-04 23:16:00,187 INFO To list cameras:         http://192.168.40.1:3001/cameras
+2026-01-04 23:16:00,188 INFO [Startup] Server listening at http://0.0.0.0:3001
+2026-01-04 23:16:10,233 INFO [API] /cameras queried from 127.0.0.1 Origin=http://localhost:3000
+2026-01-04 23:16:10,233 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:16:10,245 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:16:10,740 INFO [Startup] video0 is usable.
+2026-01-04 23:16:10,741 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:16:10,818 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:16:10,819 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:16:10,833 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:16:10,833 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:16:10,845 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:16:10,846 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:16:10,858 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:16:10,859 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:16:10,871 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:16:10,872 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:16:20,896 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:16:20,900 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:16:30,932 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:16:30,933 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:16:31,065 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:16:31,067 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:16:31,095 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:16:31,097 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:16:31,113 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:16:31,113 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:16:31,525 INFO [Startup] video2 is usable.
+2026-01-04 23:16:31,527 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:16:31,541 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:16:31,542 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:16:41,571 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:16:41,572 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:16:51,597 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:16:51,599 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:16:51,735 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:16:51,738 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:16:51,760 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:16:51,761 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:16:51,780 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:16:51,780 INFO [Startup] Final camera list: [0, 2]
+2026-01-04 23:16:51,784 INFO 127.0.0.1 [04/Jan/2026:22:16:10 +1000] "GET /cameras HTTP/1.1" 200 268 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:17:23,939 INFO [API] /cameras queried from 127.0.0.1 Origin=http://localhost:3000
+2026-01-04 23:17:23,939 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:17:23,953 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:17:24,445 INFO [Startup] video0 is usable.
+2026-01-04 23:17:24,447 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:17:24,521 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:17:24,523 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:17:24,538 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:17:24,539 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:17:24,553 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:17:24,555 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:17:24,572 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:17:24,574 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:17:24,590 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:17:24,591 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:17:34,623 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:17:34,624 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:17:44,648 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:17:44,650 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:17:44,785 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:17:44,786 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:17:44,800 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:17:44,801 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:17:44,812 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:17:44,813 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:17:45,223 INFO [Startup] video2 is usable.
+2026-01-04 23:17:45,224 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:17:45,237 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:17:45,238 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:17:55,261 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:17:55,262 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:18:05,285 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:18:05,286 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:18:05,421 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:18:05,423 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:05,437 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:18:05,437 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:18:05,449 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:18:05,449 INFO [Startup] Final camera list: [0, 2]
+2026-01-04 23:18:05,450 INFO 127.0.0.1 [04/Jan/2026:22:17:23 +1000] "GET /cameras HTTP/1.1" 200 268 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:18:05,452 INFO 127.0.0.1 [04/Jan/2026:22:18:05 +1000] "OPTIONS /offer HTTP/1.1" 200 245 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:18:05,454 INFO 127.0.0.1 [04/Jan/2026:22:18:05 +1000] "OPTIONS /offer HTTP/1.1" 200 245 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:18:05,462 INFO [API] /offer received for camera 0 from 127.0.0.1 Origin=http://localhost:3000
+2026-01-04 23:18:05,463 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:18:05,473 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:05,888 INFO [Startup] video0 is usable.
+2026-01-04 23:18:05,889 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:05,900 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:18:05,901 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:18:05,913 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:18:05,913 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:18:05,925 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:18:05,925 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:18:05,937 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:18:05,938 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:18:05,949 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:18:05,950 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:18:15,969 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:18:15,970 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:18:25,993 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:18:26,778 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:18:26,905 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:18:26,906 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:18:26,925 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:18:26,926 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:18:26,940 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:18:26,941 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:27,350 INFO [Startup] video2 is usable.
+2026-01-04 23:18:27,351 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:18:27,367 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:18:27,367 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:18:37,386 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:18:37,387 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:18:47,410 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:18:47,411 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:18:47,543 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:18:47,544 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:47,570 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:18:47,571 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:18:47,583 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:18:47,583 INFO [Startup] Final camera list: [0, 2]
+2026-01-04 23:18:47,749 INFO [Camera] Streaming from /dev/video0
+2026-01-04 23:18:47,764 INFO [API] /offer received for camera 2 from 127.0.0.1 Origin=http://localhost:3000
+2026-01-04 23:18:47,764 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:18:47,774 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:47,786 WARNING [Startup] video0 could not be opened.
+2026-01-04 23:18:47,787 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:18:47,800 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:18:47,801 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:18:47,813 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:18:47,816 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:18:47,828 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:18:47,829 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:18:47,841 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:18:47,842 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:18:47,855 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:18:47,857 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:18:57,877 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:18:57,878 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:19:07,906 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:19:07,907 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:19:07,983 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:19:07,984 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:19:08,000 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:19:08,001 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:19:08,015 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:19:08,016 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:19:08,466 INFO [Startup] video2 is usable.
+2026-01-04 23:19:08,467 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:19:08,488 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:19:08,491 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:19:18,522 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:19:18,523 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:19:28,548 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:19:28,549 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:19:28,625 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:19:28,627 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:19:28,644 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:19:28,646 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:19:28,667 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:19:28,668 INFO [Startup] Final camera list: [2]
+2026-01-04 23:19:28,825 INFO [Camera] Streaming from /dev/video2
+2026-01-04 23:19:28,851 INFO 127.0.0.1 [04/Jan/2026:22:19:28 +1000] "OPTIONS /offer HTTP/1.1" 200 245 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:19:28,866 INFO [API] /offer received for camera 0 from 127.0.0.1 Origin=http://localhost:3000
+2026-01-04 23:19:28,866 INFO [Startup] Scanning /dev/video* devices...
+2026-01-04 23:19:28,879 INFO [Startup] Found device video0: Integrated_Webcam_HD: Integrate
+2026-01-04 23:19:28,893 WARNING [Startup] video0 could not be opened.
+2026-01-04 23:19:28,893 INFO [Startup] Found device video1: Integrated_Webcam_HD: Integrate
+2026-01-04 23:19:28,907 WARNING [Startup] video1 could not be opened.
+2026-01-04 23:19:28,908 INFO [Startup] Found device video10: bcm2835-codec-decode
+2026-01-04 23:19:28,919 WARNING [Startup] video10 could not be opened.
+2026-01-04 23:19:28,920 INFO [Startup] Found device video11: bcm2835-codec-encode
+2026-01-04 23:19:28,934 WARNING [Startup] video11 could not be opened.
+2026-01-04 23:19:28,936 INFO [Startup] Found device video12: bcm2835-codec-isp
+2026-01-04 23:19:28,952 WARNING [Startup] video12 could not be opened.
+2026-01-04 23:19:28,953 INFO [Startup] Found device video13: bcm2835-isp-output0
+2026-01-04 23:19:28,968 WARNING [Startup] video13 could not be opened.
+2026-01-04 23:19:28,969 INFO [Startup] Found device video14: bcm2835-isp-capture0
+2026-01-04 23:19:38,991 WARNING [Startup] video14 opened but cannot return frames.
+2026-01-04 23:19:38,992 INFO [Startup] Found device video15: bcm2835-isp-capture1
+2026-01-04 23:19:49,010 WARNING [Startup] video15 opened but cannot return frames.
+2026-01-04 23:19:49,011 INFO [Startup] Found device video16: bcm2835-isp-stats2
+2026-01-04 23:19:49,028 WARNING [Startup] video16 could not be opened.
+2026-01-04 23:19:49,029 INFO [Startup] Found device video18: bcm2835-codec-image_fx
+2026-01-04 23:19:49,044 WARNING [Startup] video18 could not be opened.
+2026-01-04 23:19:49,045 INFO [Startup] Found device video19: rpivid
+2026-01-04 23:19:49,060 WARNING [Startup] video19 could not be opened.
+2026-01-04 23:19:49,061 INFO [Startup] Found device video2: Integrated_Webcam_HD: Integrate
+2026-01-04 23:19:49,073 WARNING [Startup] video2 could not be opened.
+2026-01-04 23:19:49,073 INFO [Startup] Found device video20: bcm2835-isp-output0
+2026-01-04 23:19:49,085 WARNING [Startup] video20 could not be opened.
+2026-01-04 23:19:49,086 INFO [Startup] Found device video21: bcm2835-isp-capture0
+2026-01-04 23:19:59,106 WARNING [Startup] video21 opened but cannot return frames.
+2026-01-04 23:19:59,108 INFO [Startup] Found device video22: bcm2835-isp-capture1
+2026-01-04 23:20:09,137 WARNING [Startup] video22 opened but cannot return frames.
+2026-01-04 23:20:09,139 INFO [Startup] Found device video23: bcm2835-isp-stats2
+2026-01-04 23:20:09,163 WARNING [Startup] video23 could not be opened.
+2026-01-04 23:20:09,164 INFO [Startup] Found device video3: Integrated_Webcam_HD: Integrate
+2026-01-04 23:20:09,180 WARNING [Startup] video3 could not be opened.
+2026-01-04 23:20:09,181 INFO [Startup] Found device video31: bcm2835-codec-encode_image
+2026-01-04 23:20:09,195 WARNING [Startup] video31 could not be opened.
+2026-01-04 23:20:09,195 INFO [Startup] Final camera list: []
+2026-01-04 23:20:09,197 INFO 127.0.0.1 [04/Jan/2026:22:19:28 +1000] "POST /offer HTTP/1.1" 404 214 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:20:09,203 INFO [API] Returning SDP answer
+2026-01-04 23:20:09,207 INFO 127.0.0.1 [04/Jan/2026:22:18:05 +1000] "POST /offer HTTP/1.1" 200 2177 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:20:09,209 INFO [API] Returning SDP answer
+2026-01-04 23:20:09,211 INFO 127.0.0.1 [04/Jan/2026:22:18:47 +1000] "POST /offer HTTP/1.1" 200 2177 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+2026-01-04 23:20:09,215 INFO WebRTC state: connecting
+2026-01-04 23:20:09,216 INFO WebRTC state: connecting
+2026-01-04 23:20:09,334 INFO Connection(0) Discovered peer reflexive candidate Candidate(ShB7WZ1qYG 1 udp 1853817087 192.168.0.37 42028 typ prflx)
+2026-01-04 23:20:09,336 INFO Connection(0) Check CandidatePair(('192.168.0.37', 46100) -> ('192.168.0.37', 42028)) State.WAITING -> State.IN_PROGRESS
+2026-01-04 23:20:09,339 INFO Connection(0) Check CandidatePair(('192.168.0.37', 46100) -> ('192.168.0.37', 42028)) State.IN_PROGRESS -> State.SUCCEEDED
+2026-01-04 23:20:09,341 INFO Connection(0) ICE completed
+2026-01-04 23:20:09,375 INFO WebRTC state: connected
+2026-01-04 23:20:09,687 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:09,697 INFO Connection(1) Discovered peer reflexive candidate Candidate(ljpitr51Lg 1 udp 1853817087 192.168.0.37 38328 typ prflx)
+2026-01-04 23:20:09,698 INFO Connection(1) Check CandidatePair(('192.168.0.37', 33771) -> ('192.168.0.37', 38328)) State.WAITING -> State.IN_PROGRESS
+2026-01-04 23:20:09,735 INFO Connection(1) Check CandidatePair(('192.168.0.37', 33771) -> ('192.168.0.37', 38328)) State.IN_PROGRESS -> State.SUCCEEDED
+2026-01-04 23:20:09,736 INFO Connection(1) ICE completed
+2026-01-04 23:20:09,771 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:09,781 INFO WebRTC state: connected
+2026-01-04 23:20:10,089 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,134 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,168 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,197 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,221 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,255 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,274 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,292 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,345 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,375 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,420 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,437 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,480 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,505 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,526 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,556 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,576 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,597 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,612 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,634 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,653 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,676 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,714 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,730 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,753 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,784 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,806 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,832 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,857 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,875 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,907 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,926 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,955 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:10,972 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:10,993 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,015 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,034 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,062 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,084 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,107 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,140 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,168 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,199 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,238 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,262 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,299 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,316 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,342 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,358 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,416 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,460 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,489 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,507 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,532 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,545 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,560 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,580 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,594 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,610 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,622 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,639 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,652 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,676 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,687 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,715 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,727 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,755 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,801 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,817 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,841 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,877 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,895 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,915 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:11,948 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:11,966 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,005 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,024 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,056 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,082 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,096 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,128 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,146 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,168 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,213 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,225 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,268 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,289 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,332 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,349 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,373 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,406 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,431 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,445 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,476 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,499 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,517 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,541 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,565 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,585 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,604 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,619 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,642 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,657 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,688 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,699 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,730 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,749 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,766 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,797 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,810 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,855 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,884 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,910 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,939 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:12,950 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,984 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:12,999 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,018 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,050 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,063 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,088 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,111 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,127 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,161 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,176 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,194 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,224 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,242 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,267 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,303 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,329 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,348 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,388 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,399 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,440 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,453 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,502 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,523 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,564 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,588 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,606 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,638 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,659 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,674 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,706 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,718 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,760 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,773 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,796 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,817 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,832 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,848 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,873 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,895 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:13,934 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:13,975 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,017 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,056 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,112 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,140 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,161 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,195 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,213 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,246 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,261 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,292 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,306 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,334 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,363 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,379 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,416 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,431 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,454 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,494 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,514 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,550 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,573 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,629 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,661 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,708 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,767 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,801 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,832 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,885 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,900 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:14,947 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:14,974 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,016 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,028 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,053 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,079 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,089 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,124 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,145 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,165 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,214 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,235 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,265 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,299 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,321 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,354 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,376 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,398 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,451 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,476 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,522 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,550 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,607 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,652 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,666 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,703 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,727 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,739 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,770 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,796 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,808 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,845 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,871 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,884 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,922 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,941 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:15,958 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:15,988 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,002 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,022 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,051 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,067 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,090 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,125 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,150 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,163 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,220 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,255 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,279 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,340 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,386 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,406 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,442 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,472 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,489 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,540 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,562 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,584 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,611 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,638 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,649 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,690 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,714 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,733 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,773 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,800 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,815 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,856 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,876 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:16,895 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:16,965 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,002 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,085 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,132 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,178 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,237 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,269 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,364 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,411 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,477 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,499 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,515 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,538 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,565 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,575 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,602 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,618 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,638 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,693 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,726 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,744 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,784 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,820 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,832 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,865 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,891 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,907 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,936 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:17,955 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:17,973 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,023 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,051 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,077 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,111 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,142 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,155 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,184 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,232 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,248 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,297 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,319 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,346 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,390 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,429 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,465 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,506 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,524 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,558 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,584 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,602 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,642 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,656 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,699 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,713 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,746 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,764 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,796 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,846 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,858 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,901 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:18,946 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:18,962 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,019 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,037 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,061 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,102 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,114 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,150 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,177 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,193 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,233 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,260 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,345 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,364 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,393 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,416 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,428 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,452 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,477 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,494 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,527 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,548 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,596 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,617 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,635 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,663 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,714 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,742 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,789 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,826 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,839 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,875 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,901 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,912 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,944 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:19,983 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:19,996 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,053 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,071 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,111 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,129 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,164 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,181 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,212 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,225 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,254 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,279 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,291 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,326 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,365 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,381 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,451 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,477 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,526 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,551 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,605 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,634 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,693 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,712 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,737 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,767 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,798 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,819 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,880 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,920 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:20,944 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:20,984 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,018 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,032 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,067 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,091 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,102 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,133 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,156 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,172 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,200 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,217 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,247 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,310 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,341 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,374 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,421 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,435 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,498 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,525 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,573 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,593 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,628 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,667 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,685 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,714 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,750 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,762 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,789 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,860 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,879 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,914 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,949 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:21,977 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:21,988 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,015 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,049 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,072 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,126 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,143 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,180 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,225 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,240 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,283 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,303 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,347 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,366 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,399 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,412 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,436 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,453 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,466 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,491 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,523 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,539 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,595 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,609 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,657 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,685 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,721 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,735 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,762 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,787 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,801 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,829 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,861 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,875 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:22,952 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:22,976 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,024 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,066 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,129 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,169 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,236 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,307 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,345 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,415 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,451 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,499 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,549 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,567 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,607 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,623 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,635 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,660 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,717 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,743 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,812 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,827 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,860 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,877 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,891 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,918 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:23,949 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:23,980 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,021 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,061 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,085 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,096 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,120 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,151 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,163 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,197 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,222 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,253 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,297 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,329 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,347 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,391 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,416 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,451 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,499 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,563 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,655 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,691 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,733 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,761 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,774 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,798 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,830 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,843 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,884 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:24,928 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:24,951 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,011 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,047 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,091 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,140 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,165 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,214 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,226 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,263 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,280 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,293 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,316 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,333 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,346 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,371 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,389 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,410 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,448 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,463 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,552 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,618 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,680 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,726 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,757 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,779 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,869 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,883 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,937 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:25,974 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:25,998 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,032 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,074 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,094 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,149 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,183 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,196 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,249 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,290 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,319 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,347 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,368 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,382 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,408 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,451 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,484 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,508 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,553 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,570 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,653 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,679 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,764 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,779 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,839 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,882 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,931 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:26,951 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:26,999 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,013 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,082 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,118 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,152 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,196 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,212 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,261 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,281 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,323 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,341 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,378 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,393 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,438 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,454 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,497 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,512 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,584 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,602 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,665 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,685 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,731 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,783 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,803 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,857 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,873 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,939 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:27,960 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:27,992 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,020 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,046 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,075 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,102 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,126 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,137 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,161 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,192 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,212 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,261 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,298 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,311 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,344 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,373 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,385 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,417 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,447 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,466 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,546 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,566 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,624 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,647 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,683 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,714 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,738 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,789 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,829 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,860 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:28,897 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:28,933 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,017 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,060 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,115 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,135 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,195 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,219 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,283 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,316 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,378 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,402 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,436 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,519 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,541 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,591 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,612 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,665 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,679 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,721 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,741 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,795 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,862 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:29,880 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,918 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,950 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:29,977 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,004 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,051 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,079 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,103 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,183 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,241 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,267 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,324 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,341 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,439 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,453 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,514 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,535 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,607 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,640 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,668 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,692 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,710 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,760 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,781 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,826 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,860 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:30,899 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:30,986 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,063 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,086 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,152 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,182 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,228 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,290 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,427 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,444 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,504 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,584 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,679 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,706 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,773 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,839 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:31,874 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:31,928 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,011 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,056 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,094 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,161 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,177 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,255 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,325 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,361 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,420 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,502 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,525 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,567 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,652 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,683 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,742 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,766 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,844 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,886 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:32,962 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:32,993 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,030 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,075 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,092 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,133 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,155 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,184 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,228 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,299 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,371 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,419 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,502 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,611 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:33,684 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,857 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:33,960 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,004 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,103 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,179 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,232 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,330 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,385 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,510 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,583 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,723 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,748 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,844 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:34,870 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:34,967 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,030 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,059 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,160 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,205 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,253 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,348 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,392 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,442 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,531 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,572 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,629 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,661 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,708 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,751 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,828 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:35,870 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:35,947 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,003 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,049 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,143 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,182 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,258 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,292 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,358 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,410 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,470 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,499 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,586 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,626 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,694 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,742 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,818 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,854 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:36,947 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:36,980 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,062 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,093 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,187 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,232 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,336 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,393 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,479 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,536 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,569 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,610 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,644 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,687 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,705 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,757 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,809 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,828 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,883 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:37,934 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:37,960 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,049 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,075 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,179 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,203 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,288 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,337 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,401 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,452 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,537 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,580 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,656 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,722 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,764 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,849 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:38,885 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:38,981 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,016 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,094 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,154 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,217 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,281 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,335 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,402 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,431 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,525 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,578 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,669 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,708 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,789 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,824 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:39,915 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:39,968 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,051 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,095 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,161 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,233 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,299 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,410 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,453 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,551 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,590 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,674 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,722 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,801 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,845 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:40,943 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:40,971 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,064 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,094 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,187 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,223 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,331 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,362 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,420 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,464 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,495 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,558 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,600 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,663 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,707 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,762 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,812 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,855 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:41,942 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:41,975 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,042 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,102 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:42,128 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,207 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,268 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:42,316 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,451 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:42,503 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,624 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:42,683 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,765 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:42,824 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:42,901 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,023 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,064 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,179 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,218 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,347 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,390 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,473 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,508 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,554 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,591 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,629 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,657 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,720 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,750 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,811 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,838 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,908 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:43,932 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:43,983 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,033 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,233 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,322 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,391 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,422 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,494 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,523 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,581 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,612 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,662 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,689 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,764 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,792 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,862 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,890 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:44,943 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:44,980 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,026 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,077 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,124 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,181 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,209 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,272 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,296 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,350 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,380 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,441 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,467 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,526 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,565 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,611 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,700 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,746 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,804 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,842 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,887 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:45,935 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:45,971 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,012 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,034 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,104 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,135 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,193 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,208 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,274 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,290 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,349 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,369 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,423 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,458 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,480 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,547 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,567 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,629 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,649 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,706 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,732 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,770 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,816 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,849 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:46,886 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,943 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:46,969 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,019 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,069 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,102 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,159 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,190 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,253 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,284 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,338 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,374 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,422 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,463 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,501 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,546 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,605 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,645 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,685 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,734 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,781 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,821 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,890 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:47,914 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:47,984 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,019 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,061 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,114 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,144 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,208 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,230 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,292 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,312 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,371 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,397 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,435 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,471 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,490 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,537 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,569 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,585 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,637 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,669 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,692 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,750 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,786 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,811 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,868 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,889 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:48,958 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:48,988 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,041 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,088 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,148 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,181 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,241 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,266 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,332 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,361 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,438 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,488 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,533 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,609 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,647 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,736 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,768 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,833 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,865 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,908 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,943 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:49,976 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:49,999 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,053 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,088 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:50,110 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,176 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,210 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:50,254 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,323 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:50,365 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:50,441 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:51,892 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:51,952 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:51,969 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,003 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,017 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,043 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,060 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,082 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,117 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,164 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,204 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,246 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,285 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,343 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,397 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,428 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,473 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,531 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,564 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,633 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,659 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,697 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,736 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,797 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,824 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,891 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:52,925 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:52,994 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,028 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,081 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,118 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,189 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,219 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,267 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,322 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,353 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,414 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,464 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,518 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,586 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,622 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,678 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,705 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,768 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,787 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,849 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:53,878 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,944 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:53,975 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,027 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,087 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,153 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,225 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,257 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,306 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,341 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,393 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,420 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,457 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,517 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,539 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,630 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,657 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,707 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,749 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,784 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,822 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,878 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,904 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:54,967 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:54,994 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,047 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,092 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,119 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,183 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,207 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,252 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,295 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,323 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,406 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,441 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,489 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,545 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,580 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,660 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,718 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,785 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,838 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,877 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,922 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:55,965 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:55,999 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,041 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,066 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,101 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,150 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,178 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,225 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,240 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,274 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,303 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,343 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,380 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,424 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,456 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,514 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,537 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,601 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,635 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,670 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,719 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,756 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,797 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,857 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,887 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:56,955 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:56,998 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,043 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,105 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,129 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,194 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,223 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,265 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,297 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,343 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,389 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,419 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,465 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,499 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,530 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,580 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,612 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,671 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,697 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,765 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,784 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,842 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,876 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:57,921 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:57,956 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,023 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,053 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,118 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,157 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,193 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,255 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,282 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,344 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,374 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,438 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,464 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,535 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,557 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,631 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,670 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,716 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,759 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,798 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,837 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,879 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:58,914 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:58,976 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,009 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,067 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,104 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,171 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,198 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,262 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,298 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,347 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,388 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,441 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,481 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,509 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,572 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,593 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,660 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,683 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,743 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,765 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,826 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,857 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:20:59,912 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:20:59,942 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,007 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,027 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,085 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,110 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,163 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,193 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,234 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,264 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,310 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,332 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,384 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,403 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,446 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,467 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,513 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,537 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,583 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,618 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,658 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,690 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,746 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,769 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,829 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,855 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,910 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:00,936 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:00,984 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,011 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,064 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,101 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,131 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,196 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,222 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,277 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,310 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,356 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,397 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,446 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,488 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,515 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,556 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,599 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,631 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,696 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,733 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,783 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,812 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,854 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,881 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:01,930 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:01,958 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,024 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,048 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,095 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,142 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,176 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,223 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,261 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,314 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,349 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,383 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,408 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,462 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,486 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,533 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,596 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,621 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,666 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,701 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,760 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,785 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,841 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,866 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,916 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:02,959 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:02,990 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,041 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,067 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,121 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,163 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,203 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,261 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,283 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,351 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,386 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,427 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,469 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,500 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,542 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,585 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,617 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,674 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,710 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,755 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,807 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,829 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,894 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:03,913 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:03,964 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,005 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,053 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,081 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,134 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,174 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,235 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,272 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,323 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,354 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,406 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,427 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,472 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,501 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,567 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,600 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,650 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,689 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,719 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,801 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,826 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,876 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,918 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:04,948 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:04,997 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,037 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,064 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,101 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,188 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,239 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,280 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,326 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,372 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,438 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,456 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,526 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,570 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,645 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,702 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,768 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,846 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:05,871 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:05,996 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,108 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,228 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,292 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,363 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,392 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,443 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,490 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,639 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,705 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,783 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,838 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,887 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:06,954 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:06,983 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,056 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,100 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,172 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,200 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,269 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,340 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,386 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,430 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,464 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,525 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,562 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,620 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,665 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,741 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,781 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,854 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,890 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:07,946 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:07,980 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,047 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,072 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,138 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,160 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,217 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,243 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,313 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,340 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,383 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,422 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,466 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,494 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,544 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,574 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,637 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,666 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,729 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,759 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,826 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,863 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,912 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:08,945 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:08,990 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,016 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,085 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,124 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,157 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,202 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,232 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,278 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,320 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,375 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,416 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,478 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,506 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,542 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,588 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,620 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,662 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,695 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,736 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,769 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,799 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,843 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,885 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:09,923 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:09,972 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,004 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,047 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,086 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,131 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,163 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,206 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,239 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,300 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,323 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,382 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,407 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,466 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,498 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,562 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,610 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,637 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,692 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,714 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,767 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,805 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,843 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,909 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:10,932 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:10,968 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,007 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,038 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,091 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,115 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,155 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,195 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,227 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,262 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,296 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,332 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,389 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,432 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,458 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,502 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,542 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,576 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,614 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,666 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,689 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,736 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,770 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,801 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,868 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,898 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,924 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:11,976 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:11,998 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,052 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,084 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,137 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,162 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,226 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,256 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,298 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,325 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,378 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,401 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,466 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,502 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,557 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,575 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,630 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,654 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,716 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,752 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,818 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,841 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,904 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:12,928 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:12,991 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,008 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,062 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,089 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,132 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,176 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,206 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,256 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,298 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,329 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,374 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,425 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,449 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,509 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,533 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,599 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,627 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,691 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,713 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,773 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,806 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,862 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,897 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:13,956 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:13,981 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,038 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,081 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,124 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,163 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,264 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,293 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,394 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,432 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,490 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,526 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,565 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,605 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,646 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,682 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,731 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,759 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,802 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,831 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,885 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:14,914 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:14,972 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,002 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,039 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,083 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,129 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,167 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,214 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,272 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,310 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,361 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,393 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,446 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,465 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,531 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,557 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,624 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,665 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,696 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,741 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,787 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,816 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,864 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,901 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:15,962 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:15,997 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,045 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,073 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,136 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,182 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,225 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,268 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,308 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,339 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,389 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,410 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,467 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,495 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,552 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,579 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,622 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,671 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,693 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,736 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,777 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,805 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,876 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,901 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:16,976 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:16,999 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,063 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,097 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,147 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,176 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,228 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,255 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,302 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,339 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,385 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,408 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,463 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,489 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,531 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,568 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,621 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,648 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,692 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,727 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,785 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,808 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,858 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,898 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:17,929 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:17,986 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,006 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,060 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,098 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,137 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,173 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,226 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,255 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,298 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,342 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,370 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,425 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,451 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,510 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,537 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,587 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,607 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,674 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,700 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,763 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,785 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,843 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,867 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,907 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:18,952 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:18,976 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,021 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,055 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,112 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,139 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,180 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,214 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,267 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,294 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,348 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,400 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,437 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,490 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,524 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,576 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,604 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,662 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,686 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,749 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,776 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,829 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,856 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:19,913 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:19,937 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,006 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,033 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,086 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,135 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,182 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,244 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,272 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,312 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,381 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,430 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,556 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,620 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,684 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,771 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,823 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,870 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:20,922 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:20,957 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,018 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,042 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,104 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,133 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,203 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,224 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,320 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,348 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,454 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,498 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,582 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,669 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,760 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,818 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:21,940 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:21,969 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,073 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,148 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,204 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,273 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,304 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,368 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,450 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,500 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,556 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,636 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,685 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,761 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,796 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,845 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:22,895 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:22,963 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,015 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,094 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,137 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,206 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,241 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,302 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,385 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,422 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,498 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,543 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,614 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,660 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,739 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,777 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,855 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:23,889 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:23,975 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,009 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,052 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,138 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,180 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,254 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,331 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,371 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,445 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,498 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,580 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,609 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,690 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,761 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,822 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,868 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:24,929 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:24,990 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,049 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,094 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,191 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,247 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,301 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,348 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,402 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,469 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,530 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,602 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,638 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,733 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,781 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,846 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:25,871 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:25,951 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:26,022 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:26,046 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:26,125 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:26,154 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:26,223 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:26,295 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:26,328 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:26,409 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:27,595 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:27,656 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:27,710 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:27,766 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:27,803 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:27,833 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:27,890 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:27,939 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,021 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,086 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,134 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,224 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,254 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,309 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,372 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,438 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,534 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,571 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,637 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,652 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,722 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,761 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,815 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,870 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:28,894 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,944 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:28,996 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,019 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,083 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,125 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,150 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,203 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,242 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,267 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,322 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,374 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,405 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,497 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,525 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,594 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,649 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,713 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,768 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,804 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,871 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:29,924 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:29,989 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,017 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,087 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,132 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,195 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,265 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,305 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,360 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,409 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,464 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,520 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,546 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,615 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,645 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,679 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,751 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,789 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,863 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:30,891 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:30,974 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,019 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,095 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,128 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,197 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,230 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,285 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,321 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,389 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,416 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,483 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,556 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,589 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,657 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,726 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,759 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,817 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,890 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:31,913 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:31,994 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,018 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,099 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,137 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,219 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,268 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,323 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,376 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,415 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,455 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,482 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,531 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,554 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,613 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,649 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,738 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,790 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,857 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:32,903 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:32,966 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,004 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,058 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,077 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,119 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,147 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,195 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,287 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,314 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,351 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,375 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,402 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,415 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,449 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,488 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,511 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,589 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,630 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,670 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,687 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,723 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,737 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,786 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,822 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:33,875 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:33,960 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,011 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,034 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,134 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,233 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,354 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,444 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,519 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,560 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,627 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,693 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,800 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,818 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,895 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:34,949 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:34,971 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,051 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,082 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,173 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,202 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,303 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,340 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,399 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,455 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,521 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,578 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,636 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,693 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,757 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,828 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:35,854 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,953 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:35,990 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,100 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,137 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,222 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,255 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,329 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,391 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,426 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,518 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,564 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,653 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,704 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,778 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,833 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:36,878 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:36,968 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,007 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,085 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,147 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,250 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,292 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,376 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,392 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,439 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,473 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,514 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,572 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,618 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,678 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,783 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,811 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:37,907 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:37,971 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,021 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,045 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,082 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,094 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,119 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,139 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,152 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,222 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,284 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,305 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,337 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,353 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,420 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,443 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,497 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,515 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,536 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,590 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,614 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,677 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,716 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,793 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,816 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,889 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:38,944 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:38,992 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,076 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,111 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,187 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,256 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,309 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,398 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,480 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,548 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,616 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,676 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,757 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,801 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,873 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:39,923 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:39,994 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,028 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,107 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,135 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,225 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,282 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,340 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,387 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,479 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,513 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,557 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,618 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,691 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,724 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,803 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,852 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:40,937 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:40,979 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,066 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,108 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,176 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,214 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,262 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,308 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,391 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,478 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,513 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,601 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,650 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,723 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,798 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,837 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:41,893 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:41,932 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,044 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,109 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,162 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,216 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,266 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,314 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,379 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,450 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,502 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,542 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,604 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,636 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,722 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,762 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,832 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,872 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:42,928 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:42,994 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,031 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,101 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,132 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,211 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,251 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,330 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,377 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,439 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,539 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,582 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,656 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,717 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,782 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,824 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:43,888 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:43,934 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,023 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,060 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,135 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,205 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,251 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,306 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,359 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,434 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,515 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,599 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,657 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,700 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,772 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,823 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,861 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:44,933 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:44,974 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,073 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,151 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,198 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,256 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,308 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,364 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,418 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,484 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,521 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,593 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,629 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,711 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,748 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,838 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:45,868 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:45,954 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,006 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,063 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,139 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,212 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,264 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,350 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,401 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,460 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,521 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,559 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,634 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,681 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,749 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,836 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:46,863 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:46,959 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,008 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,075 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,150 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,174 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,220 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,266 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,309 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,329 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,379 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,441 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,457 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,504 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,577 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,594 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,665 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,715 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,742 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,801 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,844 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:47,899 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:47,944 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,018 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,095 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,208 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,244 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,328 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,361 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,428 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,484 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,560 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,612 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,656 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,748 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,796 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,846 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:48,901 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:48,973 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,027 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,090 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,131 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,198 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,260 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,299 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,363 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,428 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,490 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,556 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,590 INFO [Bandwidth/Frame] camera=0 size=921600B
+2026-01-04 23:21:49,665 INFO [Bandwidth/Frame] camera=2 size=921600B
+2026-01-04 23:21:49,749 INFO [Bandwidth/Frame] camera=0 size=921600B
