@@ -157,7 +157,7 @@ export default function Home() {
   return (
     <>
       <div className="flex gap-8 justify-between">
-        <div className="ml-28">
+        <div className="ml-25 p-[25px]">
           <Navbar currPage={currPage} setCurrPage={setCurrPage} />
 
           <div className={currPage !== "home" ? "hidden" : "flex"}>
