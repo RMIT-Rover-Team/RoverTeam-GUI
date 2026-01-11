@@ -296,6 +296,14 @@
   color: var(--GUIRed);
 }
 
+/* sidebar */
+.GUI-sidebar {
+  background-color: var(--GUIGrey);
+  width: 18vw;
+  height: 100vh;
+  padding: 25px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
 body {
   background: var(--background);
   color: var(--foreground);

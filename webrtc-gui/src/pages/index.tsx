@@ -2,6 +2,7 @@ import Cameras from "@/components/cameras";
 import Detection from "@/components/detection";
 import Extraction from "@/components/extraction";
 import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
 import Head from "next/head";
 import { useState, useRef, useEffect, createRef } from "react";
 
@@ -154,18 +155,25 @@ export default function Home() {
 
   const [currPage, setCurrPage] = useState("home"); //the current page navbar has showing, default home
   return (
-    <div className="ml-28">
-      <Navbar currPage={currPage} setCurrPage={setCurrPage} />
+    <>
+      <div className="flex gap-8 justify-between">
+        <div className="ml-28">
+          <Navbar currPage={currPage} setCurrPage={setCurrPage} />
 
-      <div className={currPage !== "home" ? "hidden" : "flex"}>
-        <Cameras />
+          <div className={currPage !== "home" ? "hidden" : "flex"}>
+            <Cameras />
+          </div>
+          <div className={currPage !== "extraction" ? "hidden" : "flex"}>
+            <Extraction />
+          </div>
+          <div className={currPage !== "detection" ? "hidden" : "flex"}>
+            <Detection />
+          </div>
+        </div>
+        <div>
+          <Sidebar />
+        </div>
       </div>
-      <div className={currPage !== "extraction" ? "hidden" : "flex"}>
-        <Extraction />
-      </div>
-      <div className={currPage !== "detection" ? "hidden" : "flex"}>
-        <Detection />
-      </div>
-    </div>
+    </>
   );
 }
