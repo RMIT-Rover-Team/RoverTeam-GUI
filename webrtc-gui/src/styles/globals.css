@@ -253,9 +253,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
     /* GUI Colours */
     --GUIBlack: #222222;
     --GUIWhite: #ffffff;
@@ -273,24 +270,30 @@
 /* horizontally arranged flexbox */
 .GUI-HFlex {
   background-color: var(--GUIBlack);
-  border-radius: "15px";
+  border-radius: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* vertically arranged flexbox */
 .GUI-VFlex {
   background-color: var(--GUIBlack);
-  border-radius: "15px";
+  border-radius: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* button for navbar */
-.GUI-navbar-Button {
+.GUI-navbar-button {
   color: var(--GUIWhite);
   font-size: 2.25rem;
   font-family: "IBM Plex Mono", monospace;
+}
+
+.GUI-navbar-button:hover {
+  color: var(--GUIRed);
 }
 
 body {
