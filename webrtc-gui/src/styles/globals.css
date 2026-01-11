@@ -287,7 +287,6 @@
 
 /* button for navbar */
 .GUI-navbar-button {
-  color: var(--GUIWhite);
   font-size: 2.25rem;
   font-family: "IBM Plex Mono", monospace;
 }

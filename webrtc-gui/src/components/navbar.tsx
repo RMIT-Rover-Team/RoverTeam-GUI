@@ -9,19 +9,31 @@ export default function Navbar({ currPage, setCurrPage }: NavbarProps) {
       <div className="GUI-HFlex h-[10vh] gap-16 p-[25px] w-[70vw] mt-8 items-center  ">
         <button
           onClick={() => setCurrPage("home")}
-          className="GUI-navbar-button"
+          className={`GUI-navbar-button ${
+            currPage === "home"
+              ? "text-[#dd5555]"
+              : "text-white hover:text-red-500"
+          }`}
         >
           Home
         </button>
         <button
           onClick={() => setCurrPage("extraction")}
-          className="GUI-navbar-button"
+          className={`GUI-navbar-button ${
+            currPage === "extraction"
+              ? "text-[#dd5555]"
+              : "text-white hover:text-red-500"
+          }`}
         >
           Extraction
         </button>
         <button
           onClick={() => setCurrPage("detection")}
-          className="GUI-navbar-button"
+          className={`GUI-navbar-button ${
+            currPage === "detection"
+              ? "text-[#dd5555]"
+              : "text-white hover:text-red-500"
+          }`}
         >
           Detection
         </button>
