@@ -37,7 +37,7 @@
 .rover-icon-active {
   background: #bbb;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 /* Rover Navbar Styles */
 .rover-navbar {
@@ -85,7 +85,7 @@
 .rover-tab.rover-tab-active {
   background: #fff;
   color: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Rover GUI Layout Styles */
@@ -255,7 +255,42 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* GUI Colours */
+    --GUIBlack: #222222;
+    --GUIWhite: #ffffff;
+    --GUIGrey: #e0e0e0;
+    --GUIGreen: #a0ce67;
+    --GUIDarkGreen: #2f5303;
+    --GUIRed: #dd5555;
   }
+}
+
+/* CSS for GUI */
+
+/* generic boxes */
+
+/* horizontally arranged flexbox */
+.GUI-HFlex {
+  background-color: var(--GUIBlack);
+  border-radius: "15px";
+  display: flex;
+  flex-direction: column;
+}
+
+/* vertically arranged flexbox */
+.GUI-VFlex {
+  background-color: var(--GUIBlack);
+  border-radius: "15px";
+  display: flex;
+  flex-direction: row;
+}
+
+/* button for navbar */
+.GUI-navbar-Button {
+  color: var(--GUIWhite);
+  font-size: 2.25rem;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 body {
