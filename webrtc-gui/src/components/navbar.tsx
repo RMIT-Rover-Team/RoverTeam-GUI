@@ -1,6 +1,6 @@
 interface NavbarProps {
-  currPage: String;
-  setCurrPage: (page: String) => void;
+  currPage: string;
+  setCurrPage: (page: string) => void;
 }
 
 export default function Navbar({ currPage, setCurrPage }: NavbarProps) {
