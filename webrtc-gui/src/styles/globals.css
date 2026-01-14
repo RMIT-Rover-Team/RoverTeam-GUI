@@ -301,15 +301,33 @@
   width: 18vw;
   height: 100vh;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* css for subheading */
 /* css for clock */
+.GUI-subheading {
+  font-size: 1.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--GUIBlack);
+  font-weight: bold;
+}
+
 .GUI-clock {
   font-size: 2.25rem;
   font-family: "IBM Plex Mono", monospace;
   color: var(--GUIWhite);
 }
+
+/* css for status */
+.GUI-status {
+  font-size: 1.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

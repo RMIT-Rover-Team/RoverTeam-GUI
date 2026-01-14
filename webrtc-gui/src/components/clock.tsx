@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 
 export default function Clock() {
@@ -13,7 +14,7 @@ export default function Clock() {
 
   return (
     <>
-      <div className="GUI-HFlex p-4 text-center">
+      <div className="GUI-HFlex p-4 text-center ">
         <text className="GUI-clock">{now}</text>;
       </div>
     </>
