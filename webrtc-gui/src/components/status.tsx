@@ -68,14 +68,38 @@ const statusRecord: Record<StatusLed, RoverStatusDetails> = {
 };
 
 export default function Status({ status }: { status: StatusLed }) {
+  // get the record data
   const [currStatus, setCurrStatus] = useState<RoverStatusDetails>(
     statusRecord[status]
   );
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [visible, setVisible] = useState(false);
 
   return (
     <>
+      {/* description message appears on hover */}
+      {visible && (
+        <div
+          className="fixed p-4 rounded shadow-lg z-50 pointer-events-none w-[15vw] rounded-[15px]"
+          style={{
+            background: currStatus.colour,
+            borderColor: currStatus.font_colour,
+            borderWidth: "1px",
+            color: currStatus.font_colour,
+            left: pos.x - 230,
+            top: pos.y - 10,
+          }}
+        >
+          {currStatus.description}
+        </div>
+      )}
       <div className="GUI-VFlex p-4">
         <text
+          onMouseMove={(e) => {
+            setPos({ x: e.clientX, y: e.clientY });
+          }}
+          onMouseEnter={() => setVisible(true)}
+          onMouseLeave={() => setVisible(false)}
           className="GUI-status rounded-[15px] p-2 text-center"
           style={{
             backgroundColor: currStatus.colour,
