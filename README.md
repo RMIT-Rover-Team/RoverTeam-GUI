@@ -1,5 +1,7 @@
 #
 ---
+note: rm -rf the myenv and make new python3 env and source it to avoid externally managed env error
+
 
 ## whoa! this is so cool! how does this work?
 
