@@ -2,6 +2,8 @@
 ---
 note: rm -rf the myenv and make new python3 env and source it to avoid externally managed env error
 
+use v4l2-ctl --list-devices to find video device indexes. also disable firewalls.
+
 
 ## whoa! this is so cool! how does this work?
 
